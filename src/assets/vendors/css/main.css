@@ -52,13 +52,13 @@ html,
 body {
   height: 100%;
 }
-body {
+/* body {
   font-family: 'Ubuntu', sans-serif;
   background-color: #2b2b31;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
-}
-button {
+} */
+/* button {
   padding: 0;
   border: none;
   background-color: transparent;
@@ -196,8 +196,8 @@ ul {
 .b-description_readmore_button:hover:before,
 .b-description_readmore_button.b-description_readmore_button_active:before {
   color: #ff55a5;
-}
-.body:before {
+} */
+/* .body:before {
   content: '';
   position: fixed;
   display: block;
@@ -217,11 +217,11 @@ ul {
   z-index: 99;
   opacity: 1;
   pointer-events: auto;
-}
+} */
 /*==============================
 	Header
 ==============================*/
-.header {
+/* .header {
   display: block;
   position: fixed;
   top: 0;
@@ -761,7 +761,7 @@ ul {
   .header__lang {
     margin-left: 35px;
   }
-}
+} */
 /*==============================
 	Home
 ==============================*/
