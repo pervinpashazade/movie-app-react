@@ -12,7 +12,7 @@ const Header = () => {
                         <div className="col-12">
                             <div className="header__content">
                                 {/* header logo */}
-                                <a href="index.html" className="header__logo">
+                                <a href="/" className="header__logo">
                                     <img src={mainLogo} alt="logo" />
                                     {/* <img src="img/logo.svg" alt="" /> */}
                                 </a>
