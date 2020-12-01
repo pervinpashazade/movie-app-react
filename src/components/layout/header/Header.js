@@ -1,4 +1,5 @@
 import './header.css'
+import '../../../assets/vendors/css/ionicons.min.css'
 import mainLogo from '../../../assets/images/logo.svg'
 
 import React from 'react'
@@ -54,9 +55,11 @@ const Header = () => {
 
                                     {/* dropdown */}
                                     <li className="dropdown header__nav-item">
-                                        <a className="dropdown-toggle header__nav-link header__nav-link--more" 
-                                        href="0#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true" 
-                                        aria-expanded="false"><i className="icon ion-ios-more"></i>...</a>
+                                        <a className="dropdown-toggle header__nav-link header__nav-link--more"
+                                            href="0#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i className="icon ion-ios-more"></i>
+                                        </a>
 
                                         <ul className="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuMore">
                                             <li><a href="about.html">About</a></li>
