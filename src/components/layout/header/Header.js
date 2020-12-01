@@ -2,9 +2,25 @@ import './header.css'
 import '../../../assets/vendors/css/ionicons.min.css'
 import mainLogo from '../../../assets/images/logo.svg'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import SearchBarForm from '../../common/searchBar/SearchBarForm'
 
 const Header = () => {
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    function toggleSearchForm(){
+        if(isOpen){
+            setIsOpen(false)
+        }else{
+            setIsOpen(true)
+        }
+    }
+
+    useEffect(() => {
+        console.log(isOpen)
+    }, [isOpen])
+
     return (
         <header className="header">
             <div className="header__wrap">
@@ -78,7 +94,8 @@ const Header = () => {
 
                                 {/* header auth */}
                                 <div className="header__auth">
-                                    <button className="header__search-btn" type="button">
+                                    <button className="header__search-btn" type="button"
+                                        onClick={toggleSearchForm}>
                                         <i className="icon ion-ios-search"></i>
                                     </button>
 
@@ -115,19 +132,7 @@ const Header = () => {
             </div>
 
             {/* header search */}
-            <form action="#" className="header__search">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="header__search-content">
-                                <input type="text" placeholder="Search for a movie, TV Series that you are looking for" />
-
-                                <button type="button">search</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            <SearchBarForm open={isOpen} onClose={() => setIsOpen(false)} />
             {/* end header search */}
         </header>
     )

@@ -18,16 +18,16 @@ $(document).ready(function () {
 	/*==============================
 	Search
 	==============================*/
-	$('.header__search-btn').on('click', function () {
-		$(this).toggleClass('active');
-		$('.header__search').toggleClass('header__search--active');
+	// $('.header__search-btn').on('click', function () {
+	// 	$(this).toggleClass('active');
+	// 	$('.header__search').toggleClass('header__search--active');
 
-		if ($('.header__btn').hasClass('header__btn--active')) {
-			$('.header__btn').toggleClass('header__btn--active');
-			$('.header__nav').toggleClass('header__nav--active');
-			$('.body').toggleClass('body--active');
-		}
-	});
+	// 	if ($('.header__btn').hasClass('header__btn--active')) {
+	// 		$('.header__btn').toggleClass('header__btn--active');
+	// 		$('.header__nav').toggleClass('header__nav--active');
+	// 		$('.body').toggleClass('body--active');
+	// 	}
+	// });
 
 	/*==============================
 	Home
