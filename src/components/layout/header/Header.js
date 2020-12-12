@@ -9,10 +9,10 @@ const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    function toggleSearchForm(){
-        if(isOpen){
+    function toggleSearchForm() {
+        if (isOpen) {
             setIsOpen(false)
-        }else{
+        } else {
             setIsOpen(true)
         }
     }
@@ -20,6 +20,20 @@ const Header = () => {
     useEffect(() => {
         console.log(isOpen)
     }, [isOpen])
+
+
+    const [mobileHeaderBtnToggle, setMobileHeaderBtnToggle] = useState(false);
+
+    function mobileHeaderBtn() {
+        if (mobileHeaderBtnToggle) {
+            setMobileHeaderBtnToggle(false)
+            document.body.classList.remove('body--active');
+
+        } else {
+            setMobileHeaderBtnToggle(true)
+            document.body.classList.add('body--active');
+        }
+    }
 
     return (
         <header className="header">
@@ -36,7 +50,7 @@ const Header = () => {
                                 {/* end header logo */}
 
                                 {/* header nav */}
-                                <ul className="header__nav">
+                                <ul className={"header__nav " + (!mobileHeaderBtnToggle? "" : "header__nav--active")}>
                                     {/* dropdown */}
                                     <li className="header__nav-item">
                                         <a className="dropdown-toggle header__nav-link" href="0#" role="button" id="dropdownMenuHome" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
@@ -119,7 +133,10 @@ const Header = () => {
                                 {/* end header auth */}
 
                                 {/* header menu btn */}
-                                <button className="header__btn" type="button">
+                                <button
+                                    onClick={mobileHeaderBtn}
+                                    className={"header__btn " + (!mobileHeaderBtnToggle? "" : "header__nav--active")}
+                                    type="button">
                                     <span></span>
                                     <span></span>
                                     <span></span>
