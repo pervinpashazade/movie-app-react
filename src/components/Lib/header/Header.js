@@ -3,7 +3,7 @@ import '../../../assets/vendors/css/ionicons.min.css'
 import mainLogo from '../../../assets/images/logo.svg'
 
 import React, { useState, useEffect } from 'react'
-import SearchBarForm from '../../common/searchBar/SearchBarForm'
+import SearchBarForm from '../searchBar/SearchBarForm'
 
 const Header = () => {
 
