@@ -1,0 +1,60 @@
+{
+    "data": [
+        {
+            "name": "I Dream in Another Language",
+            "raiting": "8.4",
+            "genres": [
+                {
+                    "name": "Action",
+                    "link": "0#"
+                },
+                {
+                    "name": "Triller",
+                    "link": "0#"
+                }
+            ],
+            "image": "https://dmitryvolkov.me/demo/flixgo2.0/main/img/covers/cover.jpg"
+        },
+        {
+            "name": "Benched",
+            "raiting": "7.1",
+            "genres": [
+                {
+                    "name": "Comedy",
+                    "link": "0#"
+                }
+            ],
+            "image": "https://dmitryvolkov.me/demo/flixgo2.0/main/img/covers/cover2.jpg"
+        },
+        {
+            "name": "Whitney",
+            "raiting": "6.3",
+            "genres": [
+                {
+                    "name": "Romance",
+                    "link": "0#"
+                },
+                {
+                    "name": "Drama",
+                    "link": "0#"
+                }
+            ],
+            "image": "https://dmitryvolkov.me/demo/flixgo2.0/main/img/covers/cover3.jpg"
+        },
+        {
+            "name": "Blindspotting",
+            "raiting": "7.9",
+            "genres": [
+                {
+                    "name": "Comedy",
+                    "link": "0#"
+                },
+                {
+                    "name": "Drama",
+                    "link": "0#"
+                }
+            ],
+            "image": "https://dmitryvolkov.me/demo/flixgo2.0/main/img/covers/cover4.jpg"
+        }
+    ]
+}

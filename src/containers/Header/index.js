@@ -1,13 +1,13 @@
-import './header.css'
-import '../../../assets/vendors/css/ionicons.min.css'
-import mainLogo from '../../../assets/images/logo.svg'
-
+import './style.css'
+import '../../assets/vendors/css/ionicons.min.css'
+import mainLogo from '../../assets/images/logo.svg'
 import React, { useState, useEffect } from 'react'
-import SearchBarForm from '../searchBar/SearchBarForm'
+import SearchBarForm from '../../components/Lib/SearchBar/SearchBarForm'
 
 const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false)
+    const [mobileHeaderBtnToggle, setMobileHeaderBtnToggle] = useState(false);
 
     function toggleSearchForm() {
         if (isOpen) {
@@ -20,9 +20,6 @@ const Header = () => {
     useEffect(() => {
         console.log(isOpen)
     }, [isOpen])
-
-
-    const [mobileHeaderBtnToggle, setMobileHeaderBtnToggle] = useState(false);
 
     function mobileHeaderBtn() {
         if (mobileHeaderBtnToggle) {
@@ -155,4 +152,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;
