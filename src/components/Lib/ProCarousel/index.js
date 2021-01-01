@@ -14,6 +14,7 @@ SwiperCore.use([Navigation]);
 
 export default function ProCarousel({
     children,
+    loop,
     prevClick,
     nextClick,
     setPrevClick,
@@ -41,8 +42,8 @@ export default function ProCarousel({
         <Swiper
             tag="section"
             wrapperTag="ul"
-            loop={true}
-            slidesPerView="auto"
+            loop={loop && true}
+            slidesPerView={loop && "auto"}
             navigation
             spaceBetween={width < 1200 ? 30 : 50}
             breakpoints={{

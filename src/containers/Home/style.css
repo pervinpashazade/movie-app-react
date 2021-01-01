@@ -1,10 +1,11 @@
 .home {
-    margin-top: 70px;
+    /* margin-top: 70px; */
     position: relative;
     display: block;
     background-color: #2b2b31;
     padding: 40px 0;
     overflow: hidden;
+    box-shadow: 0px -5px 25px 0 rgba(0, 0, 0, 0.1);
 }
 
 .home .container {
@@ -98,7 +99,7 @@
 
 @media (min-width: 768px) {
     .home {
-        margin-top: 90px;
+        /* margin-top: 90px; */
         padding: 60px 0;
     }
     .home__title {

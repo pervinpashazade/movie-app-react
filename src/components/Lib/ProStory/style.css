@@ -1,0 +1,132 @@
+.circle-story {
+    display: inline-block;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: all 0.3;
+}
+
+.circle-story .title {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+    letter-spacing: 0.2px;
+}
+
+.circle-story .circle {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(#128db6, #ff0066);
+    border-radius: 50%;
+    margin: 20px 10px 10px 10px;
+    display: flex;
+}
+
+.circle-story .circle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    background-color: #28282d;
+}
+
+.circle-story img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    z-index: 1;
+    /* padding: 3px; */
+    opacity: 0.5;
+    transition: 0.4s ease;
+}
+
+.circle-story .circle span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* #7474a7, */
+    background: linear-gradient( #702e3b, #ff0066);
+    border-radius: 50%;
+}
+
+.circle-story .circle span:nth-child(1) {
+    filter: blur(2px);
+}
+
+.circle-story .circle span:nth-child(2) {
+    filter: blur(4px);
+}
+
+/* hovers */
+
+.circle-story:hover .circle img {
+    opacity: 0.6;
+}
+
+.circle-story:hover .circle span:nth-child(3) {
+    filter: blur(10px);
+    animation: hoverAnimate 2s linear infinite;
+}
+
+.circle-story:hover .circle span:nth-child(4) {
+    filter: blur(13px);
+}
+
+.circle-story:active .circle span:nth-child(1) {
+    animation: clickAnimate 0.3s linear infinite;
+}
+
+.circle-story:active .circle span:nth-child(2) {
+    animation: clickAnimate 0.5s linear infinite;
+}
+
+.circle-story:active .circle span:nth-child(4) {
+    animation: clickAnimate 0.4s linear infinite;
+}
+
+@keyframes hoverAnimate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes clickAnimate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* slider */
+
+.swiper-button-prev {
+    display: none;
+}
+
+.swiper-button-next {
+    display: none;
+}
+
+.swiper-scrollbar-drag {
+    background: rgba(0, 0, 0, 0.1) !important;
+}
+
+@media (min-width: 768px) {
+    .circle-story .circle {
+        width: 75px;
+        height: 75px;
+    }
+}

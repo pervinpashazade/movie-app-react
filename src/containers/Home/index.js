@@ -9,11 +9,7 @@ import './style.css'
 export default function Home() {
     return (
         <section className="home">
-
             <HomeSliderBg />
-
-            
         </section>
     )
-
 }

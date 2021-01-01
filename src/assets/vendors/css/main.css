@@ -8,9 +8,9 @@ Primary use:	FlixGo Main Template
 /*----------------------------------------
 [Table of contents]
 
-1. Header
-2. Home
-3. Content
+1. Header+
+2. Home+
+3. Content+
 4. Section
 5. Breadcrumb
 6. Card
@@ -871,7 +871,7 @@ ul {
 /*==============================
 	Content
 ==============================*/
-.content {
+/* .content {
   padding: 0 0 20px;
 }
 .content__head {
@@ -1144,7 +1144,7 @@ ul {
   .content__tabs--profile li:last-child {
     margin-right: 0;
   }
-}
+} */
 /*==============================
 	Section
 ==============================*/
