@@ -39,14 +39,14 @@ const Header = () => {
     }
 
     const genres = [
-        { name: "test1" },
-        { name: "test2" },
-        { name: "test3" },
-        { name: "test4" },
-        { name: "test5" },
-        { name: "test6" },
-        { name: "test7" },
-        { name: "test8" },
+        { name: "Action" },
+        { name: "Triller" },
+        { name: "Most Popular" },
+        { name: "4K" },
+        { name: "HD" },
+        { name: "Triller" },
+        { name: "Romantic" },
+        { name: "Comedi" },
         { name: "test9" },
         { name: "test10" },
         { name: "test11" },
@@ -175,7 +175,7 @@ const Header = () => {
                     breakpoint="story"
                 >
                     {genres.map((item, key) => (
-                        <StoryCircle data={item} key={key}/>
+                        <StoryCircle data={item} key={key} />
                     ))}
                 </StoryCircleSlider>
             </ProContent>

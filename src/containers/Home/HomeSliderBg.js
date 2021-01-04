@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import CustomCarousel from '../../components/Lib/Carousel'
 import ProCarousel from '../../components/Lib/ProCarousel'
 import Card from '../../components/Lib/Card'
@@ -59,7 +59,9 @@ export default function HomeSliderBg() {
                                 setNextClick={setNextClick}
                             >
                                 {moviesData.data.map((item, key) =>
-                                    <Card size={"card--big"} data={item} key={key} />
+                                    <div className="item" key={key}>
+                                        <Card size={"card--big"} data={item} />
+                                    </div>
                                 )}
                             </ProCarousel>
                         </div>
