@@ -1,4 +1,11 @@
 .home {
+    margin-top: 70px;
+    background-color: #2b2b31;
+    /* padding-top: 40px; */
+    box-shadow: 0px -5px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.home .home-slider-bg {
     /* margin-top: 70px; */
     position: relative;
     display: block;
@@ -13,7 +20,7 @@
     z-index: 2;
 }
 
-.home__bg {
+.home .home-slider-bg .home__bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -99,8 +106,8 @@
 
 @media (min-width: 768px) {
     .home {
-        /* margin-top: 90px; */
-        padding: 60px 0;
+        margin-top: 90px;
+        /* padding-top: 60px; */
     }
     .home__title {
         font-size: 32px;
@@ -111,9 +118,6 @@
 }
 
 @media (min-width: 1200px) {
-    .home {
-        padding: 70px 0;
-    }
     .home__title {
         font-size: 36px;
     }

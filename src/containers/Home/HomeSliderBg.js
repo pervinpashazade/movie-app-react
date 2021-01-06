@@ -25,7 +25,7 @@ export default function HomeSliderBg() {
     ]
 
     return (
-        <>
+        <div className="home-slider-bg">
             <div className="home__bg">
                 <CustomCarousel
                     images={dataImages}
@@ -68,6 +68,6 @@ export default function HomeSliderBg() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

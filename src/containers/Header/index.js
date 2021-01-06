@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 //components
 import SearchBarForm from '../../components/Lib/SearchBar/SearchBarForm';
-import ProContent from '../../components/Lib/ProContent';
-import StoryCircle from '../../components/Lib/ProStory/StoryCircle';
-import StoryCircleSlider from '../../components/Lib/ProStory/StoryCircleSlider';
 
 import mainLogo from '../../assets/images/logo.svg';
 import './style.css';
@@ -37,21 +34,6 @@ const Header = () => {
             document.body.classList.add('body--active');
         }
     }
-
-    const genres = [
-        { name: "Action" },
-        { name: "Triller" },
-        { name: "Most Popular" },
-        { name: "4K" },
-        { name: "HD" },
-        { name: "Triller" },
-        { name: "Romantic" },
-        { name: "Comedi" },
-        { name: "test9" },
-        { name: "test10" },
-        { name: "test11" },
-        { name: "test12" },
-    ]
 
     return (
         <>
@@ -170,15 +152,6 @@ const Header = () => {
                 {/* header search */}
                 <SearchBarForm open={isOpen} onClose={() => setIsOpen(false)} />
             </header>
-            <ProContent>
-                <StoryCircleSlider
-                    breakpoint="story"
-                >
-                    {genres.map((item, key) => (
-                        <StoryCircle data={item} key={key} />
-                    ))}
-                </StoryCircleSlider>
-            </ProContent>
         </>
     )
 }

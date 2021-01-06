@@ -12,13 +12,11 @@ function ProItemsGrid(props) {
                 {/* 'active show' */}
                 <div className="fade active show">
                     <div className="row">
-
                         {data.map((item, key) =>
                             <div className="col-6 col-sm-4 col-lg-3 col-xl-2" key={key}>
                                 <Card data={item} />
                             </div>
                         )}
-
                     </div>
                 </div>
             </div>

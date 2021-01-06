@@ -11,7 +11,7 @@
     background-color: #28282d;
     -webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.3);
-    margin-top: 70px;
+    /* margin-top: 70px; */
     position: relative;
 }
 
@@ -279,9 +279,9 @@
         font-size: 32px;
         margin: 25px 0 10px;
     }
-    .content__head {
+    /* .content__head {
         margin-top: 90px;
-    }
+    } */
     .content__tabs--profile {
         display: flex;
     }
