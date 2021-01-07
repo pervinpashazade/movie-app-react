@@ -11,7 +11,6 @@ const SearchBarForm = (props) => {
                     <div className="col-12">
                         <div className="header__search-content">
                             <input type="text" placeholder="Search for a movie, TV Series that you are looking for" />
-
                             <button type="button">search</button>
                         </div>
                     </div>

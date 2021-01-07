@@ -4,20 +4,11 @@ import ProYoutubeFrame from '../../components/Lib/ProYoutubeFrame';
 function HomeVideoBg() {
     return (
         <>
-            {/* <div className="container">
-                <div className="col-lg-6">
-
-                </div>
-                <div className="col-12 col-lg-8">
-                    <ProYoutubeFrame />
-                </div>
-            </div> */}
-            <div className="container">
+            {/* <div className="container"> */}
                 <ProYoutubeFrame />
-            </div>
-
+            {/* </div> */}
         </>
     )
 }
 
-export default HomeVideoBg
+export default HomeVideoBg;
