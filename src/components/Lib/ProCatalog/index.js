@@ -12,7 +12,7 @@ function ProCatalog(props) {
     return (
         <>
             <ProContent>
-                <h2 className="content__title">New items</h2>
+                <h2 className="content__title">Explore items</h2>
                 <ul className="nav nav-tabs content__tabs" id="content__tabs" role="tablist">
                     <li className="nav-item">
                         <a className="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">NEW RELEASES</a>
