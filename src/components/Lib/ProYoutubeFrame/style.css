@@ -5,6 +5,10 @@
     pointer-events: none;
     width: 100%;
     overflow: hidden;
+
+    margin-top: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .youtube-frame::before{
