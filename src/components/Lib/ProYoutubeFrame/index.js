@@ -50,8 +50,12 @@ const ProYoutubeFrame = (props) => {
     }, [])
 
     return (
-        <div className="youtube-frame">
-            <div id={`youtube-player-${id}`} />
+        <div className="youtube-container">
+            <div className="container">
+                <div className="youtube-frame">
+                    <div id={`youtube-player-${id}`} />
+                </div>
+            </div>
         </div>
     );
 }
