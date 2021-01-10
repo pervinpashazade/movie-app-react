@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/movie-app-react/static/css/main.c3676139.chunk.css",
+    "main.css": "/movie-app-react/static/css/main.75fba836.chunk.css",
     "main.js": "/movie-app-react/static/js/main.1ab626be.chunk.js",
     "main.js.map": "/movie-app-react/static/js/main.1ab626be.chunk.js.map",
     "runtime-main.js": "/movie-app-react/static/js/runtime-main.5d38c9ca.js",
@@ -12,12 +12,13 @@
     "static/js/3.e4e59564.chunk.js.map": "/movie-app-react/static/js/3.e4e59564.chunk.js.map",
     "index.html": "/movie-app-react/index.html",
     "static/css/2.2b02be2c.chunk.css.map": "/movie-app-react/static/css/2.2b02be2c.chunk.css.map",
-    "static/css/main.c3676139.chunk.css.map": "/movie-app-react/static/css/main.c3676139.chunk.css.map",
+    "static/css/main.75fba836.chunk.css.map": "/movie-app-react/static/css/main.75fba836.chunk.css.map",
     "static/js/2.b6abd00e.chunk.js.LICENSE.txt": "/movie-app-react/static/js/2.b6abd00e.chunk.js.LICENSE.txt",
-    "static/media/style.css": "/movie-app-react/static/media/home__bg.9e290928.jpg",
+    "static/media/home__bg.9e290928.jpg": "/movie-app-react/static/media/home__bg.9e290928.jpg",
     "static/media/home__bg2.0a5b6b98.jpg": "/movie-app-react/static/media/home__bg2.0a5b6b98.jpg",
     "static/media/home__bg3.d8a56223.jpg": "/movie-app-react/static/media/home__bg3.d8a56223.jpg",
     "static/media/home__bg4.0002c86d.jpg": "/movie-app-react/static/media/home__bg4.0002c86d.jpg",
+    "static/media/style.css": "/movie-app-react/static/media/home_yt_bg_img.450ee819.jfif",
     "static/media/ionicons.min.css": "/movie-app-react/static/media/ioniconse0a5.fef568f6.ttf",
     "static/media/logo.45238c1f.svg": "/movie-app-react/static/media/logo.45238c1f.svg"
   },
@@ -25,7 +26,7 @@
     "static/js/runtime-main.5d38c9ca.js",
     "static/css/2.2b02be2c.chunk.css",
     "static/js/2.b6abd00e.chunk.js",
-    "static/css/main.c3676139.chunk.css",
+    "static/css/main.75fba836.chunk.css",
     "static/js/main.1ab626be.chunk.js"
   ]
 }
