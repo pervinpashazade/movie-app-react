@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
+import useWindowsSize from '../../../hooks/useWindowsSize'
 import './style.css'
 
 const ProYoutubeFrame = (props) => {
 
-    const { id } = props;
-
-
+    const { data } = props;
+    const [width,] = useWindowsSize()
 
     const onPlayerReady = event => {
         event.target.playVideo();
@@ -14,9 +14,8 @@ const ProYoutubeFrame = (props) => {
     useEffect(() => {
 
         const loadVideo = () => {
-            // the Player object is created uniquely based on the id in props
-            const player = new window.YT.Player(`youtube-player-${id}`, {
-                videoId: id,
+            new window.YT.Player(`youtube-player-${data.id}`, {
+                videoId: data.id,
                 events: {
                     onReady: onPlayerReady,
                 },
@@ -28,8 +27,11 @@ const ProYoutubeFrame = (props) => {
                     'origin': 'http://localhost:3000',
                     'disablekb': 1,
                     'loop': 1,
-                    'playlist': id,
+                    'playlist': data.id,
                     'mute': 1,
+                    'volume': 0,
+                    'playsinline': 1,
+                    // 'end': 60,
                 },
             });
         };
@@ -47,17 +49,43 @@ const ProYoutubeFrame = (props) => {
         } else { // If script is already there, load the video directly
             loadVideo();
         }
-    }, [])
+    }, [data.id])
+
+    // React.Children.count(props.children) === 0
 
     return (
         <div className="youtube-container">
-            <div className="container">
+            <div className={width > 640 && "container"}>
+                {data.title &&
+                    // <div className={width < 640 && "container"}>
+                    <div className="youtube-overlay">
+                        <div className="youtube-content">
+                            <p className="title">{data.title}</p>
+                            <p className="description">{data.description}</p>
+                        </div>
+                        <ul className="youtube-buttons">
+                            {/* <li>
+                                <a href="0#" className="btn-youtube play"><i class="icon ion-ios-play"></i></a>
+                            </li> */}
+                            <li>
+                                <a href="0#" className="btn-youtube"><i class="icon ion-ios-pause"></i></a>
+                            </li>
+                            <li>
+                                <a href="0#" className="btn-youtube"><i class="icon ion-ios-volume-off"></i></a>
+                            </li>
+                            {/* <li>
+                                <a href="0#" className="btn-youtube"><i class="icon ion-ios-volume-high"></i></a>
+                            </li> */}
+                        </ul>
+                    </div>
+                    //</div>
+                }
                 <div className="youtube-frame">
-                    <div id={`youtube-player-${id}`} />
+                    <div id={`youtube-player-${data.id}`} />
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default ProYoutubeFrame;
