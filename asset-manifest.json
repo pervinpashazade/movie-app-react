@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/movie-app-react/static/css/main.89997c80.chunk.css",
-    "main.js": "/movie-app-react/static/js/main.056720fa.chunk.js",
-    "main.js.map": "/movie-app-react/static/js/main.056720fa.chunk.js.map",
+    "main.css": "/movie-app-react/static/css/main.d9eb0470.chunk.css",
+    "main.js": "/movie-app-react/static/js/main.234b010c.chunk.js",
+    "main.js.map": "/movie-app-react/static/js/main.234b010c.chunk.js.map",
     "runtime-main.js": "/movie-app-react/static/js/runtime-main.bf3de958.js",
     "runtime-main.js.map": "/movie-app-react/static/js/runtime-main.bf3de958.js.map",
     "static/css/2.2b02be2c.chunk.css": "/movie-app-react/static/css/2.2b02be2c.chunk.css",
-    "static/js/2.d5486841.chunk.js": "/movie-app-react/static/js/2.d5486841.chunk.js",
-    "static/js/2.d5486841.chunk.js.map": "/movie-app-react/static/js/2.d5486841.chunk.js.map",
+    "static/js/2.ebaebde1.chunk.js": "/movie-app-react/static/js/2.ebaebde1.chunk.js",
+    "static/js/2.ebaebde1.chunk.js.map": "/movie-app-react/static/js/2.ebaebde1.chunk.js.map",
     "static/js/3.e730f07b.chunk.js": "/movie-app-react/static/js/3.e730f07b.chunk.js",
     "static/js/3.e730f07b.chunk.js.map": "/movie-app-react/static/js/3.e730f07b.chunk.js.map",
     "index.html": "/movie-app-react/index.html",
     "static/css/2.2b02be2c.chunk.css.map": "/movie-app-react/static/css/2.2b02be2c.chunk.css.map",
-    "static/css/main.89997c80.chunk.css.map": "/movie-app-react/static/css/main.89997c80.chunk.css.map",
-    "static/js/2.d5486841.chunk.js.LICENSE.txt": "/movie-app-react/static/js/2.d5486841.chunk.js.LICENSE.txt",
+    "static/css/main.d9eb0470.chunk.css.map": "/movie-app-react/static/css/main.d9eb0470.chunk.css.map",
+    "static/js/2.ebaebde1.chunk.js.LICENSE.txt": "/movie-app-react/static/js/2.ebaebde1.chunk.js.LICENSE.txt",
     "static/media/default_bg.ade6147a.jpg": "/movie-app-react/static/media/default_bg.ade6147a.jpg",
     "static/media/home__bg.9e290928.jpg": "/movie-app-react/static/media/home__bg.9e290928.jpg",
     "static/media/home__bg2.0a5b6b98.jpg": "/movie-app-react/static/media/home__bg2.0a5b6b98.jpg",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.bf3de958.js",
     "static/css/2.2b02be2c.chunk.css",
-    "static/js/2.d5486841.chunk.js",
-    "static/css/main.89997c80.chunk.css",
-    "static/js/main.056720fa.chunk.js"
+    "static/js/2.ebaebde1.chunk.js",
+    "static/css/main.d9eb0470.chunk.css",
+    "static/js/main.234b010c.chunk.js"
   ]
 }
