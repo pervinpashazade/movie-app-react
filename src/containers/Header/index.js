@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 //components
 import SearchBarForm from '../../components/Lib/SearchBar/SearchBarForm';
@@ -20,9 +20,9 @@ const Header = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(isOpen)
-    }, [isOpen])
+    // React.useEffect(() => {
+    //     console.log(isOpen)
+    // }, [isOpen])
 
     function mobileHeaderBtn() {
         if (mobileHeaderBtnToggle) {

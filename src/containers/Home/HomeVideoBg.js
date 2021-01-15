@@ -13,6 +13,7 @@ function HomeVideoBg() {
                     title: "Welcome!",
                     description: text
                 }}
+                showOverlay={true}
             />
         </>
     )

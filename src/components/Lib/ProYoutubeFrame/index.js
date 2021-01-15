@@ -1,20 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import useWindowsSize from '../../../hooks/useWindowsSize'
 import './style.css'
 
 const ProYoutubeFrame = (props) => {
 
-    const { data } = props;
+    const { data, showOverlay } = props;
     const [width,] = useWindowsSize()
 
-    const onPlayerReady = event => {
-        event.target.playVideo();
-    };
+    //youtube-buttons
+    const [isPlay, setIsPlay] = useState(width > 768 ? true : false)
+    const [isMute, setIsMute] = useState(true)
+
+    const [isMobile, setIsMobile] = useState(width > 768 ? false : true)
+    const [ytPlayer, setYtPlayer] = useState(undefined)
 
     useEffect(() => {
+        console.log("isPlay : ", isPlay)
+    }, [isPlay])
 
+    //don't autoplay on mobile screen & set isMobile
+    useEffect(() => {
+        setIsMobile(width > 768 ? true : false)
+    }, [width])
+
+    // useEffect(() => {
+    //     if (ytPlayer !== undefined) {
+    //         ytPlayer.response.stopVideo();
+    //     }
+    // }, [ytPlayer])
+
+    //set(update) yt player if changed after initialization
+    // useEffect(() => {
+    //     if (ytPlayer !== undefined) {
+    //         setYtPlayer(ytPlayer)
+    //         console.log("yt player useeffect", ytPlayer)
+    //     }
+    // }, [ytPlayer])
+
+    const onPlayerReady = event => {
+        setYtPlayer({ response: event.target }) //set yt player from youtube api
+        // document.getElementsByClassName('ytp-pause-overlay').style.visibility='hidden';
+        console.log("test", document.getElementsByClassName('ytp-pause-overlay'))
+        if (isMobile) {
+            event.target.stopVideo();
+        }
+        console.log("yt state : ", event.target.getPlayerState())
+    };
+
+    //create new YT.Player
+    useEffect(() => {
         const loadVideo = () => {
-            new window.YT.Player(`youtube-player-${data.id}`, {
+            const player = new window.YT.Player(`youtube-player-${data.id}`, {
                 videoId: data.id,
                 events: {
                     onReady: onPlayerReady,
@@ -31,6 +67,8 @@ const ProYoutubeFrame = (props) => {
                     'mute': 1,
                     'volume': 0,
                     'playsinline': 1,
+                    // 'playsinline': '1',
+                    // 'allowsInlineMediaPlayback': '1'
                     // 'end': 60,
                 },
             });
@@ -51,34 +89,64 @@ const ProYoutubeFrame = (props) => {
         }
     }, [data.id])
 
-    // React.Children.count(props.children) === 0
-
     return (
         <div className="youtube-container">
-            <div className={width > 640 && "container"}>
-                {data.title &&
-                    // <div className={width < 640 && "container"}>
+            <div className={width > 640 ? "container" : ""}>
+                {showOverlay &&
                     <div className="youtube-overlay">
                         <div className="youtube-content">
                             <p className="title">{data.title}</p>
                             <p className="description">{data.description}</p>
                         </div>
                         <ul className="youtube-buttons">
-                            {/* <li>
-                                <a href="0#" className="btn-youtube play"><i class="icon ion-ios-play"></i></a>
-                            </li> */}
                             <li>
-                                <a href="0#" className="btn-youtube"><i class="icon ion-ios-pause"></i></a>
+                                <button
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        if (isPlay) {
+                                            setIsPlay(false);
+                                            ytPlayer?.response.pauseVideo();
+                                        } else {
+                                            setIsPlay(true);
+                                            ytPlayer?.response.playVideo();
+                                        }
+                                    }}
+                                    className="btn-youtube"
+                                >
+                                    {
+                                        isPlay ?
+                                            <i className="icon ion-ios-pause"></i>
+                                            :
+                                            <i className="icon ion-ios-play"></i>
+                                    }
+                                </button>
                             </li>
                             <li>
-                                <a href="0#" className="btn-youtube"><i class="icon ion-ios-volume-off"></i></a>
+                                <button
+                                    className="btn-youtube"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        if (isMute) {
+                                            setIsMute(false)
+                                            ytPlayer?.response.unMute();
+                                            ytPlayer?.response.setVolume(15);
+                                        } else {
+                                            setIsMute(true)
+                                            ytPlayer?.response.mute();
+                                            ytPlayer?.response.setVolume(0);
+                                        }
+                                    }}
+                                >
+                                    {
+                                        isMute ?
+                                            <i className="icon ion-ios-volume-off"></i>
+                                            :
+                                            <i className="icon ion-ios-volume-high"></i>
+                                    }
+                                </button>
                             </li>
-                            {/* <li>
-                                <a href="0#" className="btn-youtube"><i class="icon ion-ios-volume-high"></i></a>
-                            </li> */}
                         </ul>
                     </div>
-                    //</div>
                 }
                 <div className="youtube-frame">
                     <div id={`youtube-player-${data.id}`} />
