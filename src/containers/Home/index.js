@@ -8,12 +8,14 @@ import ProCatalog from '../../components/Lib/ProCatalog'
 import ProContent from '../../components/Lib/ProContent';
 import StoryCircle from '../../components/Lib/ProStory/StoryCircle';
 import StoryCircleSlider from '../../components/Lib/ProStory/StoryCircleSlider';
+import ProItemArea from '../../components/Lib/ProItemArea';
 
 //styles
 import './style.css'
 
 // fake static data
-import moviesData from '../../server/movies.json'
+import moviesData from '../../server/movies.json';
+import platformsData from '../../server/platforms.json';
 
 //genre imgs
 import action from '../../assets/images/new/action.jpeg'
@@ -37,7 +39,11 @@ import shortfilm from '../../assets/images/new/shortfilm.jpeg'
 import sport from '../../assets/images/new/sport.jpeg'
 import thriller from '../../assets/images/new/thriller.jpeg'
 import war from '../../assets/images/new/war.jpeg'
-import ReactYoutube from '../../components/Lib/ReactYoutube';
+import ProSection from '../../components/Lib/ProSection';
+
+
+//Platforms section bg image
+import platformsSectionBgImage from '../../assets/images/section/section.jpg'
 
 export default function Home() {
 
@@ -83,6 +89,20 @@ export default function Home() {
             <section className="content">
                 <ProCatalog data={moviesData.data} />
             </section>
+            {/* <section className="section section--bg" style={{ background: "url(&quot;img/section/section.jpg&quot;) center center / cover no-repeat;" }}>
+                <ProItemArea />
+            </section> */}
+            <ProSection
+                proClasses="section section--bg"
+                proStyles={
+                    {
+                        backgroundImage: `url(${platformsSectionBgImage})`,
+                        backgroundPosition: 'bottom',
+                        backgroundSize: 'cover',
+                        backgroundReapeat: 'norepeat'
+                    }}>
+                <ProItemArea data={platformsData.data} />
+            </ProSection>
         </>
     )
 }

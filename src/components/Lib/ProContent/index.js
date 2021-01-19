@@ -4,7 +4,6 @@ import React from 'react'
 import './style.css'
 
 function ProContent({ children }) {
-
     if (React.Children.count(children) === 0) {
         return null;
     }

@@ -1,0 +1,29 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Netflix",
+            "image": "https://kinoo.az/uploads/posts/2020-12/netflix_2.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Prime Video",
+            "image": "https://kinoo.az/uploads/posts/2020-12/primevideo_8.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Apple Tv+",
+            "image": "https://kinoo.az/uploads/posts/2020-12/apple-_7.jpg"
+        },
+        {
+            "id": 4,
+            "name": "BlueTv",
+            "image": "https://kinoo.az/uploads/posts/2020-12/blutv_4.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Exxen",
+            "image": "https://kinoo.az/uploads/posts/2021-01/exxen.jpg"
+        }
+    ]
+}

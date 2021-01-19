@@ -11,7 +11,7 @@ const ProYoutubeFrame = (props) => {
     const [isPlay, setIsPlay] = useState(width > 768 ? true : false)
     const [isMute, setIsMute] = useState(true)
 
-    const [isMobile, setIsMobile] = useState(width > 768 ? false : true)
+    const [isMobile, ] = useState(width > 768 ? false : true)
     const [ytPlayer, setYtPlayer] = useState(undefined)
 
     useEffect(() => {
@@ -27,14 +27,12 @@ const ProYoutubeFrame = (props) => {
     const onPlayerReady = event => {
         setYtPlayer({ response: event.target }) //set yt player from youtube api
         // document.getElementsByClassName('ytp-pause-overlay').style.visibility='hidden';
-        console.log("test", document.getElementsByClassName('ytp-pause-overlay'))
+
+        //
+        event.target.playVideo();
         if (isMobile) {
-            event.target.playVideo();
             event.target.pauseVideo();
-        } {
-            event.target.playVideo();
         }
-        console.log("yt state : ", event.target.getPlayerState())
     };
 
     //create new YT.Player
@@ -61,6 +59,7 @@ const ProYoutubeFrame = (props) => {
                     // 'end': 60,
                 },
             });
+            console.log('youtube player', player)
         };
 
         if (!window.YT) { // If not, load the script asynchronously
@@ -72,17 +71,12 @@ const ProYoutubeFrame = (props) => {
 
             const firstScriptTag = document.getElementsByTagName('script')[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
         } else { // If script is already there, load the video directly
             loadVideo();
         }
     }, [data.id])
 
     const imgUrl = "https://gadgetfreeks.com/wp-content/uploads/2020/04/Money-Heist-Season-4.jpg"
-
-    useEffect(() => {
-        console.log("isMobile ? ", isMobile)
-    }, [isMobile])
 
     return (
         <div className="youtube-container">

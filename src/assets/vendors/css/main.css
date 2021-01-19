@@ -1148,7 +1148,7 @@ ul {
 /*==============================
 	Section
 ==============================*/
-.section {
+/* .section {
   padding: 40px 0;
   position: relative;
 }
@@ -1337,7 +1337,7 @@ ul {
   .section__title--sidebar {
     font-size: 32px;
   }
-}
+} */
 /*==============================
 	Breadcrumb
 ==============================*/
