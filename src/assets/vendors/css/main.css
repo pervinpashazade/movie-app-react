@@ -3166,7 +3166,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 /*==============================
 	Footer
 ==============================*/
-.footer {
+/* .footer {
   background-color: #28282d;
   display: block;
   position: relative;
@@ -3350,7 +3350,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .footer__copyright ul li {
     margin-right: 30px;
   }
-}
+} */
 /*==============================
 	Sign
 ==============================*/
