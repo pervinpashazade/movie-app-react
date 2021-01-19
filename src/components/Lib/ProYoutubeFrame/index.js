@@ -4,7 +4,7 @@ import './style.css'
 
 const ProYoutubeFrame = (props) => {
 
-    const { data, showOverlay } = props;
+    const { data } = props;
     const [width,] = useWindowsSize()
 
     //youtube-buttons
@@ -19,30 +19,20 @@ const ProYoutubeFrame = (props) => {
     }, [isPlay])
 
     //don't autoplay on mobile screen & set isMobile
-    useEffect(() => {
-        setIsMobile(width > 768 ? true : false)
-    }, [width])
-
+    //problem is here!!!
     // useEffect(() => {
-    //     if (ytPlayer !== undefined) {
-    //         ytPlayer.response.stopVideo();
-    //     }
-    // }, [ytPlayer])
-
-    //set(update) yt player if changed after initialization
-    // useEffect(() => {
-    //     if (ytPlayer !== undefined) {
-    //         setYtPlayer(ytPlayer)
-    //         console.log("yt player useeffect", ytPlayer)
-    //     }
-    // }, [ytPlayer])
+    //     setIsMobile(width > 768 ? false : true)
+    // }, [width])
 
     const onPlayerReady = event => {
         setYtPlayer({ response: event.target }) //set yt player from youtube api
         // document.getElementsByClassName('ytp-pause-overlay').style.visibility='hidden';
         console.log("test", document.getElementsByClassName('ytp-pause-overlay'))
         if (isMobile) {
-            event.target.stopVideo();
+            event.target.playVideo();
+            event.target.pauseVideo();
+        } {
+            event.target.playVideo();
         }
         console.log("yt state : ", event.target.getPlayerState())
     };
@@ -67,7 +57,6 @@ const ProYoutubeFrame = (props) => {
                     'mute': 1,
                     'volume': 0,
                     'playsinline': 1,
-                    // 'playsinline': '1',
                     // 'allowsInlineMediaPlayback': '1'
                     // 'end': 60,
                 },
@@ -89,67 +78,79 @@ const ProYoutubeFrame = (props) => {
         }
     }, [data.id])
 
+    const imgUrl = "https://gadgetfreeks.com/wp-content/uploads/2020/04/Money-Heist-Season-4.jpg"
+
+    useEffect(() => {
+        console.log("isMobile ? ", isMobile)
+    }, [isMobile])
+
     return (
         <div className="youtube-container">
             <div className={width > 640 ? "container" : ""}>
-                {showOverlay &&
-                    <div className="youtube-overlay">
-                        <div className="youtube-content">
-                            <p className="title">{data.title}</p>
-                            <p className="description">{data.description}</p>
-                        </div>
-                        <ul className="youtube-buttons">
-                            <li>
-                                <button
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        if (isPlay) {
-                                            setIsPlay(false);
-                                            ytPlayer?.response.pauseVideo();
-                                        } else {
-                                            setIsPlay(true);
-                                            ytPlayer?.response.playVideo();
-                                        }
-                                    }}
-                                    className="btn-youtube"
-                                >
-                                    {
-                                        isPlay ?
-                                            <i className="icon ion-ios-pause"></i>
-                                            :
-                                            <i className="icon ion-ios-play"></i>
-                                    }
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    className="btn-youtube"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        if (isMute) {
-                                            setIsMute(false)
-                                            ytPlayer?.response.unMute();
-                                            ytPlayer?.response.setVolume(15);
-                                        } else {
-                                            setIsMute(true)
-                                            ytPlayer?.response.mute();
-                                            ytPlayer?.response.setVolume(0);
-                                        }
-                                    }}
-                                >
-                                    {
-                                        isMute ?
-                                            <i className="icon ion-ios-volume-off"></i>
-                                            :
-                                            <i className="icon ion-ios-volume-high"></i>
-                                    }
-                                </button>
-                            </li>
-                        </ul>
+                {/* <div className="container"> */}
+                <div className="youtube-overlay">
+                    <div className="poster"></div>
+                    <div className="youtube-content">
+                        <p className="title">{isMobile ? "Explore & Watch & enjoy!" : data.title}</p>
+                        <p className="description">{data.description}</p>
                     </div>
-                }
-                <div className="youtube-frame">
-                    <div id={`youtube-player-${data.id}`} />
+                    <ul className="youtube-buttons">
+                        <li>
+                            <button
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    if (isPlay) {
+                                        setIsPlay(false);
+                                        ytPlayer?.response.pauseVideo();
+                                    } else {
+                                        setIsPlay(true);
+                                        ytPlayer?.response.playVideo();
+                                    }
+                                }}
+                                className="btn-youtube"
+                            >
+                                {
+                                    isPlay ?
+                                        <i className="icon ion-ios-pause"></i>
+                                        :
+                                        <i className="icon ion-ios-play"></i>
+                                }
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                className="btn-youtube"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    if (isMute) {
+                                        setIsMute(false)
+                                        ytPlayer?.response.unMute();
+                                        ytPlayer?.response.setVolume(15);
+                                    } else {
+                                        setIsMute(true)
+                                        ytPlayer?.response.mute();
+                                        ytPlayer?.response.setVolume(0);
+                                    }
+                                }}
+                            >
+                                {
+                                    isMute ?
+                                        <i className="icon ion-ios-volume-off"></i>
+                                        :
+                                        <i className="icon ion-ios-volume-high"></i>
+                                }
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div className="youtube-frame" style={{ backgroundImage: `url(${imgUrl})` }}>
+                    {isMobile ?
+                        <div style={{ opacity: isPlay ? 1 : 0 }}>
+                            <div id={`youtube-player-${data.id}`} />
+                        </div>
+                        :
+                        <div id={`youtube-player-${data.id}`} />
+                    }
                 </div>
             </div>
         </div>

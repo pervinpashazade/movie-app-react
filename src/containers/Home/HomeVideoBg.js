@@ -10,10 +10,9 @@ function HomeVideoBg() {
             <ProYoutubeFrame
                 data={{
                     id: "p_PJbmrX4uk",
-                    title: "Welcome!",
+                    title: "EXPLORE & WATCH & ENJOY!",
                     description: text
                 }}
-                showOverlay={true}
             />
         </>
     )
