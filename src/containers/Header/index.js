@@ -77,11 +77,11 @@ const Header = () => {
                                         {/* end dropdown */}
 
                                         <li className="header__nav-item">
-                                            <a href="pricing.html" className="header__nav-link">Pricing Plan</a>
+                                            <a href="0#" className="header__nav-link">About</a>
                                         </li>
 
                                         <li className="header__nav-item">
-                                            <a href="faq.html" className="header__nav-link">Help</a>
+                                            <a href="0#" className="header__nav-link">Contact</a>
                                         </li>
 
                                         {/* dropdown */}
@@ -101,6 +101,7 @@ const Header = () => {
                                                 <li><a href="privacy.html">Privacy Policy</a></li>
                                                 <li><a href="contacts.html">Contacts</a></li>
                                                 <li><a href="404.html">404 Page</a></li>
+                                                <li><a href="faq.html">FAQ</a></li>
                                             </ul>
                                         </li>
                                         {/* end dropdown */}

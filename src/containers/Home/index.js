@@ -5,10 +5,15 @@ import HomeVideoBg from './HomeVideoBg'
 import HomeSliderBg from './HomeSliderBg'
 import ProCatalog from '../../components/Lib/ProCatalog'
 
+import ProSection from '../../components/Lib/ProSection';
+
 import ProContent from '../../components/Lib/ProContent';
 import StoryCircle from '../../components/Lib/ProStory/StoryCircle';
 import StoryCircleSlider from '../../components/Lib/ProStory/StoryCircleSlider';
 import ProItemArea from '../../components/Lib/ProItemArea';
+import ProHowItWorks from '../../components/Lib/ProHowItWorks';
+
+
 
 //styles
 import './style.css'
@@ -39,7 +44,6 @@ import shortfilm from '../../assets/images/new/shortfilm.jpeg'
 import sport from '../../assets/images/new/sport.jpeg'
 import thriller from '../../assets/images/new/thriller.jpeg'
 import war from '../../assets/images/new/war.jpeg'
-import ProSection from '../../components/Lib/ProSection';
 
 
 //Platforms section bg image
@@ -89,9 +93,6 @@ export default function Home() {
             <section className="content">
                 <ProCatalog data={moviesData.data} />
             </section>
-            {/* <section className="section section--bg" style={{ background: "url(&quot;img/section/section.jpg&quot;) center center / cover no-repeat;" }}>
-                <ProItemArea />
-            </section> */}
             <ProSection
                 proClasses="section section--bg"
                 proStyles={
@@ -102,6 +103,9 @@ export default function Home() {
                         backgroundReapeat: 'norepeat'
                     }}>
                 <ProItemArea data={platformsData.data} />
+            </ProSection>
+            <ProSection proClasses={"section section--dark"}>
+                <ProHowItWorks />
             </ProSection>
         </>
     )
