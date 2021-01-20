@@ -11,9 +11,8 @@ import ProContent from '../../components/Lib/ProContent';
 import StoryCircle from '../../components/Lib/ProStory/StoryCircle';
 import StoryCircleSlider from '../../components/Lib/ProStory/StoryCircleSlider';
 import ProItemArea from '../../components/Lib/ProItemArea';
+import ProAbout from '../../components/Lib/ProAbout';
 import ProHowItWorks from '../../components/Lib/ProHowItWorks';
-
-
 
 //styles
 import './style.css'
@@ -103,6 +102,9 @@ export default function Home() {
                         backgroundReapeat: 'norepeat'
                     }}>
                 <ProItemArea data={platformsData.data} />
+            </ProSection>
+            <ProSection proClasses={"section"}>
+                <ProAbout />
             </ProSection>
             <ProSection proClasses={"section section--dark"}>
                 <ProHowItWorks />
