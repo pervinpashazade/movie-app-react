@@ -38,7 +38,8 @@
     right: 0;
     bottom: 0;
     background-color: #2b2b31;
-    z-index: 99;
+    /* for pro modal component' backdrop */
+    /* z-index: 99; */
     width: 305px;
     padding: 30px 30px 0;
     -webkit-transform: translate3d(305px, 0, 0);
@@ -275,7 +276,8 @@
     color: #fff;
 }
 
-.header__sign-in {
+/* used by ProLogin component */
+/* .header__sign-in {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -304,7 +306,7 @@
 
 .header__sign-in:hover {
     opacity: 1;
-}
+} */
 
 .header__btn {
     display: block;
@@ -442,9 +444,10 @@
     .header__logo img {
         max-width: 120px;
     }
-    .header__sign-in, .header__lang {
+    /* used by ProLogin component */
+    /* .header__sign-in, .header__lang {
         margin-left: 30px;
-    }
+    } */
     .header__auth {
         margin-right: 54px;
     }
@@ -471,7 +474,8 @@
     .header__search-btn {
         font-size: 26px;
     }
-    .header__sign-in {
+    /* used by ProLogin componet */
+    /* .header__sign-in {
         height: 50px;
         width: 140px;
         margin-left: 30px;
@@ -486,7 +490,7 @@
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 1px;
-    }
+    } */
     .header__nav {
         top: 90px;
         width: 260px;
@@ -514,9 +518,9 @@
     .header__logo {
         width: 240px;
     }
-    .header__sign-in {
+    /* .header__sign-in {
         margin-left: 45px;
-    }
+    } */
     .header__auth {
         margin-right: 0;
     }

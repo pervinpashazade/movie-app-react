@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 
-//components
-import SearchBarForm from '../../components/Lib/SearchBar/SearchBarForm';
-
 import mainLogo from '../../assets/images/logo.svg';
 import './style.css';
 import '../../assets/vendors/css/ionicons.min.css'; // !!!
+
+//components
+import SearchBarForm from '../../components/Lib/SearchBar/SearchBarForm';
+import ProLoginBtn from '../../components/Lib/ProLogin/ProLoginBtn';
+
 
 const Header = () => {
 
@@ -46,7 +48,6 @@ const Header = () => {
                                     {/* header logo */}
                                     <a href="/" className="header__logo">
                                         <img src={mainLogo} alt="logo" />
-                                        {/* <img src="img/logo.svg" alt="" /> */}
                                     </a>
                                     {/* end header logo */}
 
@@ -61,9 +62,7 @@ const Header = () => {
                                                 <li><a href="index2.html">Home static bg</a></li>
                                             </ul>
                                         </li>
-                                        {/* end dropdown */}
 
-                                        {/* dropdown */}
                                         <li className="header__nav-item">
                                             <a className="dropdown-toggle header__nav-link" href="0#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
 
@@ -74,7 +73,6 @@ const Header = () => {
                                                 <li><a href="details2.html">Details TV Series</a></li>
                                             </ul>
                                         </li>
-                                        {/* end dropdown */}
 
                                         <li className="header__nav-item">
                                             <a href="0#" className="header__nav-link">About</a>
@@ -84,7 +82,6 @@ const Header = () => {
                                             <a href="0#" className="header__nav-link">Contact</a>
                                         </li>
 
-                                        {/* dropdown */}
                                         <li className="dropdown header__nav-item">
                                             <a className="dropdown-toggle header__nav-link header__nav-link--more"
                                                 href="0#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true"
@@ -104,9 +101,7 @@ const Header = () => {
                                                 <li><a href="faq.html">FAQ</a></li>
                                             </ul>
                                         </li>
-                                        {/* end dropdown */}
                                     </ul>
-                                    {/* end header nav */}
 
                                     {/* header auth */}
                                     <div className="header__auth">
@@ -127,10 +122,10 @@ const Header = () => {
                                         </div>
                                         {/* end dropdown */}
 
-                                        <a href="signin.html" className="header__sign-in">
-                                            <i className="icon ion-ios-log-in"></i>
-                                            <span>sign in</span>
-                                        </a>
+                                        {/* login button */}
+                                        <ProLoginBtn />
+                                        {/* end login button */}
+
                                     </div>
                                     {/* end header auth */}
 

@@ -19,8 +19,8 @@ function Footer() {
                     <div className="col-12 col-md-3">
                         <h6 className="footer__title">Download Our App, soon!</h6>
                         <ul className="footer__app">
-                            <li><a href="#"><img src={appStoreSvg} alt="download from app store" /></a></li>
-                            <li><a href="#"><img src={googlePlaySvg} alt="download from google play" /></a></li>
+                            <li><a href="0#"><img src={appStoreSvg} alt="download from app store" /></a></li>
+                            <li><a href="0#"><img src={googlePlaySvg} alt="download from google play" /></a></li>
                         </ul>
                     </div>
 
@@ -49,9 +49,9 @@ function Footer() {
                             <li><a href="mailto:support@moviego.com">contact@filmgo.az</a></li>
                         </ul>
                         <ul className="footer__social">
-                            <li className="yt"><a href="#"><i className="icon ion-logo-youtube"></i></a></li>
-                            <li className="instagram"><a href="#"><i className="icon ion-logo-instagram"></i></a></li>
-                            <li className="facebook"><a href="#"><i className="icon ion-logo-facebook"></i></a></li>
+                            <li className="yt"><a href="0#"><i className="icon ion-logo-youtube"></i></a></li>
+                            <li className="instagram"><a href="0#"><i className="icon ion-logo-instagram"></i></a></li>
+                            <li className="facebook"><a href="0#"><i className="icon ion-logo-facebook"></i></a></li>
                         </ul>
                     </div>
 
@@ -59,12 +59,14 @@ function Footer() {
                         <div className="footer__copyright">
                             <small>© 2021 FilmGo.az {isMobile && <br />}Created by <span>
                                 <a href="https://www.facebook.com/pervin.pashazade"
+                                    rel="noopener noreferrer"
                                     target="_blank">Pervin Pashazade
                                     </a>
                             </span>
                                 <span> & </span>
                                 <span>
                                     <a href="https://www.facebook.com/resad.nagiyev"
+                                        rel="noopener noreferrer"
                                         target="_blank">Reshad Naghiyev
                                     </a>
                                 </span>

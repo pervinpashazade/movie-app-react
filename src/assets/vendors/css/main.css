@@ -3367,7 +3367,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   min-height: 100vh;
   padding: 40px 0;
 }
-.sign__form {
+/* .sign__form {
   background-color: #28282d;
   -webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
   box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
@@ -3556,7 +3556,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .sign__logo {
     margin-bottom: 50px;
   }
-}
+} */
 /*==============================
 	Page 404
 ==============================*/

@@ -106,9 +106,9 @@ export default function Home() {
             <ProSection proClasses={"section"}>
                 <ProAbout />
             </ProSection>
-            <ProSection proClasses={"section section--dark"}>
+            {/* <ProSection proClasses={"section section--dark"}>
                 <ProHowItWorks />
-            </ProSection>
+            </ProSection> */}
         </>
     )
 }

@@ -1,0 +1,49 @@
+.pro-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* right: 0;
+    bottom: 0; */
+    z-index: 105;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
+    /* // */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.pro-modal.active body {
+    margin: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    overflow: -moz-hidden-unscrollable !important;
+}
+
+.pro-modal .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* z-index: 105; */
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    background-color: rgb(40 40 45 / 93%);
+    /* // */
+    /* width: 100%;
+    height: 100%;
+    overflow: auto; */
+}
+
+.pro-modal .modal-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* z-index: 106; */
+    background-color: red;
+    /* display: flex;
+    justify-content: center; */
+}
