@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
 import App from './App';
+// config
+import configureAppStore from './store';
+import { httpService } from './store/apiConfig';
+
 import reportWebVitals from './reportWebVitals';
 
+// const store = configureAppStore();
+
+// httpService(store);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  // <Provider store={store}>
+    <App />,
+  // </Provider>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
