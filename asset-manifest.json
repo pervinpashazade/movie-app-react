@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/movie-app-react/static/css/main.9663824f.chunk.css",
+    "main.css": "/movie-app-react/static/css/main.c569ef1d.chunk.css",
     "main.js": "/movie-app-react/static/js/main.f5ca00cb.chunk.js",
     "main.js.map": "/movie-app-react/static/js/main.f5ca00cb.chunk.js.map",
     "runtime-main.js": "/movie-app-react/static/js/runtime-main.41c04fee.js",
@@ -12,7 +12,7 @@
     "static/js/3.470ff0e6.chunk.js.map": "/movie-app-react/static/js/3.470ff0e6.chunk.js.map",
     "index.html": "/movie-app-react/index.html",
     "static/css/2.2b02be2c.chunk.css.map": "/movie-app-react/static/css/2.2b02be2c.chunk.css.map",
-    "static/css/main.9663824f.chunk.css.map": "/movie-app-react/static/css/main.9663824f.chunk.css.map",
+    "static/css/main.c569ef1d.chunk.css.map": "/movie-app-react/static/css/main.c569ef1d.chunk.css.map",
     "static/js/2.30242554.chunk.js.LICENSE.txt": "/movie-app-react/static/js/2.30242554.chunk.js.LICENSE.txt",
     "static/media/Download_on_the_App_Store_Badge.8c4986ee.svg": "/movie-app-react/static/media/Download_on_the_App_Store_Badge.8c4986ee.svg",
     "static/media/google-play-badge.e14e50e8.png": "/movie-app-react/static/media/google-play-badge.e14e50e8.png",
@@ -29,7 +29,7 @@
     "static/js/runtime-main.41c04fee.js",
     "static/css/2.2b02be2c.chunk.css",
     "static/js/2.30242554.chunk.js",
-    "static/css/main.9663824f.chunk.css",
+    "static/css/main.c569ef1d.chunk.css",
     "static/js/main.f5ca00cb.chunk.js"
   ]
 }
