@@ -1,107 +1,113 @@
 
-// import axios from 'axios';
+import axios from 'axios';
 // import { API } from 'store/constants';
-// import { toast } from 'react-toastify';
-// import { showLoader, hideLoader } from 'utils/loadingIconControl';
+import { toast } from 'react-toastify';
+
+//copied!!!
+import { showLoader, hideLoader } from '../../utils/loadingIconControl';
 // import { apiStart, apiEnd, apiError, accessDenied } from 'store/actions/api';
-// import { messages, apiErrorMessageResolver } from 'utils';
-// import errorMessages from 'utils/errors';
+import { apiStart, apiEnd, apiError, accessDenied } from '../actions/api';
+import { messages, apiErrorMessageResolver } from '../../utils';
+import errorMessages from '../../utils/errors';
 
-// // TO Do
-// // const { CancelToken } = axios;
-// // export const { token, cancel } = CancelToken.source();
+//// TO Do
+//// const { CancelToken } = axios;
+//// export const { token, cancel } = CancelToken.source();
 
-// const apiMiddleware = ({ dispatch, getState }) => next => action => {
-//     if (action && action.type) {
-//         if (action?.type !== API) {
-//             next(action);
-//             return;
-//         }
+const apiMiddleware = ({ dispatch, getState }) => next => action => {
 
-//         const {
-//             url,
-//             method,
-//             data,
-//             onSuccess,
-//             onFailure,
-//             label,
-//             showLoading,
-//             showToast,
-//             attribute,
-//             shouldCallApi,
-//             showErrorToast,
-//         } = action.payload;
+    const API = 'API';
 
-//         if (!shouldCallApi(getState())) return;
+    if (action && action.type) {
+        if (action?.type !== API) {
+            next(action);
+            return;
+        }
 
-//         if (showLoading) {
-//             showLoader();
-//         }
+        const {
+            url,
+            method,
+            data,
+            onSuccess,
+            onFailure,
+            label,
+            showLoading,
+            showToast,
+            attribute,
+            shouldCallApi,
+            showErrorToast,
+        } = action.payload;
 
-//         if (label) {
-//             dispatch(apiStart(label));
-//         }
+        if (!shouldCallApi(getState())) return;
 
-//         const dataOrParams = ['GET'].includes(method) ? 'params' : 'data';
+        if (showLoading) {
+            showLoader();
+        }
 
-//         axios
-//             .request({
-//                 url,
-//                 method,
-//                 // cancelToken: token,
-//                 [dataOrParams]: data,
-//             })
-//             .then(response => {
-//                 dispatch(
-//                     onSuccess({
-//                         ...response?.data,
-//                         data: response?.data?.data,
-//                         attribute,
-//                     })
-//                 );
+        if (label) {
+            dispatch(apiStart(label));
+        }
 
-//                 if (showToast) {
-//                     toast.success(messages.successText, {
-//                         className: 'success-toast',
-//                     });
-//                 }
-//             })
-//             .catch(error => {
-//                 if (axios.isCancel(error)) return;
+        const dataOrParams = ['GET'].includes(method) ? 'params' : 'data';
 
-//                 let errorMessage = apiErrorMessageResolver(error);
-//                 const errorKey = error?.response?.data?.error?.messageKey;
-//                 if (errorKey && errorMessages[errorKey]) {
-//                     errorMessage = errorMessages[errorKey];
-//                 }
+        axios
+            .request({
+                url,
+                method,
+                //// cancelToken: token,
+                [dataOrParams]: data,
+            })
+            .then(response => {
+                dispatch(
+                    onSuccess({
+                        ...response?.data,
+                        data: response?.data?.data,
+                        attribute,
+                    })
+                );
 
-//                 dispatch(apiError({ message: errorMessage, attribute }));
+                if (showToast) {
+                    toast.success(messages.successText, {
+                        className: 'success-toast',
+                    });
+                }
+            })
+            .catch(error => {
+                if (axios.isCancel(error)) return;
 
-//                 if (error?.response?.status === 403) {
-//                     return;
-//                 }
+                let errorMessage = apiErrorMessageResolver(error);
+                const errorKey = error?.response?.data?.error?.messageKey;
+                if (errorKey && errorMessages[errorKey]) {
+                    errorMessage = errorMessages[errorKey];
+                }
 
-//                 if (showErrorToast && error?.response?.status !== 403) {
-//                     toast.error(errorMessage);
-//                 }
+                dispatch(apiError({ message: errorMessage, attribute }));
 
-//                 if (error.response && error.response.status === 403) {
-//                     dispatch(accessDenied(window.location.pathname));
-//                 }
+                if (error?.response?.status === 403) {
+                    return;
+                }
 
-//                 if (onFailure) {
-//                     dispatch(onFailure({ error, attribute }));
-//                 }
-//             })
-//             .finally(() => {
-//                 if (showLoading) {
-//                     hideLoader();
-//                 }
-//                 if (label) {
-//                     dispatch(apiEnd(label));
-//                 }
-//             });
-//     }
-// };
+                if (showErrorToast && error?.response?.status !== 403) {
+                    toast.error(errorMessage);
+                }
 
-// export default apiMiddleware;
+                if (error.response && error.response.status === 403) {
+                    dispatch(accessDenied(window.location.pathname));
+                }
+
+                if (onFailure) {
+                    dispatch(onFailure({ error, attribute }));
+                }
+            })
+            .finally(() => {
+                if (showLoading) {
+                    hideLoader();
+                }
+                if (label) {
+                    dispatch(apiEnd(label));
+                }
+            });
+    }
+};
+
+export default apiMiddleware;

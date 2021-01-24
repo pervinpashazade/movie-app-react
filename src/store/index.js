@@ -1,9 +1,9 @@
-// import {
-//     configureStore,
-//     combineReducers,
-//     getDefaultMiddleware,
-// } from 'redux-starter-kit';
-// import apiMiddleware from './middleware/api';
+import {
+    configureStore,
+    combineReducers,
+    getDefaultMiddleware,
+} from '@reduxjs/toolkit';
+import apiMiddleware from './middleware/api';
 
 // // reducers
 // import { authReducer } from './reducers/auth';
@@ -108,123 +108,123 @@
 //     balanceSheetReducer,
 // } from './reducers/reports';
 
-// const appReducer = combineReducers({
-//     authReducer,
-//     loadings: loadingReducer,
-//     kassaReducer,
-//     vezifelerReducer,
-//     anbarReducer,
-//     muqavileTypesReducer,
-//     mehsulReducer,
-//     rolesReducer,
-//     profileReducer,
-//     tenantReducer,
-//     structureReducer,
-//     employeesReducer,
-//     stockReducer,
-//     productReducer,
-//     permissionsReducer,
-//     catalogsReducer,
-//     salesOperationsReducer,
-//     financeOperationsReducer,
-//     contactsReducer,
-//     contractsReducer,
-//     invoicesReducer,
-//     advancePaymentReducer,
-//     expenseCatalogReducer,
-//     expenseItems,
-//     settlementsReducer,
-//     hrReducer,
-//     serialNumberPrefixReducer,
-//     workSchedulesReducer,
-//     transactionCatalog,
-//     workScheduleDaysReducer,
-//     nonWorkingDaysReducer,
-//     workersReducer,
-//     hrmCalendarReducer,
-//     attachmentReducer,
-//     // salesReportReducer,
-//     expenseReportReducer,
-//     employeeActivitiesReducer,
-//     vacationReducer,
-//     sickLeaveReducer,
-//     businessTripReducer,
-//     timeOffReducer,
-//     appointmentReducer,
-//     fireReducer,
-//     // jobs
-//     parametersReducer,
-//     appealsReducer,
-//     interviewReducer,
-//     vacanciesReducer,
-//     announcementsReducer,
-//     contactReducer,
-//     currenciesReducer,
-//     appealsCountsReducer,
+const appReducer = combineReducers({
+    // authReducer,
+    // loadings: loadingReducer,
+    // kassaReducer,
+    // vezifelerReducer,
+    // anbarReducer,
+    // muqavileTypesReducer,
+    // mehsulReducer,
+    // rolesReducer,
+    // profileReducer,
+    // tenantReducer,
+    // structureReducer,
+    // employeesReducer,
+    // stockReducer,
+    // productReducer,
+    // permissionsReducer,
+    // catalogsReducer,
+    // salesOperationsReducer,
+    // financeOperationsReducer,
+    // contactsReducer,
+    // contractsReducer,
+    // invoicesReducer,
+    // advancePaymentReducer,
+    // expenseCatalogReducer,
+    // expenseItems,
+    // settlementsReducer,
+    // hrReducer,
+    // serialNumberPrefixReducer,
+    // workSchedulesReducer,
+    // transactionCatalog,
+    // workScheduleDaysReducer,
+    // nonWorkingDaysReducer,
+    // workersReducer,
+    // hrmCalendarReducer,
+    // attachmentReducer,
+    // // salesReportReducer,
+    // expenseReportReducer,
+    // employeeActivitiesReducer,
+    // vacationReducer,
+    // sickLeaveReducer,
+    // businessTripReducer,
+    // timeOffReducer,
+    // appointmentReducer,
+    // fireReducer,
+    // // jobs
+    // parametersReducer,
+    // appealsReducer,
+    // interviewReducer,
+    // vacanciesReducer,
+    // announcementsReducer,
+    // contactReducer,
+    // currenciesReducer,
+    // appealsCountsReducer,
 
-//     // hrm
-//     attendanceReducer,
-//     reportReducer,
-//     hrmTimecardReducer,
-//     hrmFinesReducer,
-//     usersReducer,
+    // // hrm
+    // attendanceReducer,
+    // reportReducer,
+    // hrmTimecardReducer,
+    // hrmFinesReducer,
+    // usersReducer,
 
-//     subscriptionReducer,
+    // subscriptionReducer,
 
-//     // notifications
-//     apiNotificationsReducer,
+    // // notifications
+    // apiNotificationsReducer,
 
-//     dashboardFinanceReducer,
+    // dashboardFinanceReducer,
 
-//     // terminal
-//     terminalCommandReducer,
+    // // terminal
+    // terminalCommandReducer,
 
-//     convertCurrency,
-//     cashBoxBalanceReducer,
+    // convertCurrency,
+    // cashBoxBalanceReducer,
 
-//     expenseItemsByCatalogId,
-//     hrmEmployeesReducer,
-//     financeReportCashFlowReducer,
+    // expenseItemsByCatalogId,
+    // hrmEmployeesReducer,
+    // financeReportCashFlowReducer,
 
-//     salesAndBuysReducer,
-//     //partners
-//     partnersReducer,
-//     //goods
-//     goodsReducer,
+    // salesAndBuysReducer,
+    // //partners
+    // partnersReducer,
+    // //goods
+    // goodsReducer,
 
-//     // orders
-//     ordersReducer,
+    // // orders
+    // ordersReducer,
 
-//     // measurements
-//     measurementsReducer,
+    // // measurements
+    // measurementsReducer,
 
-//     // recievables and payablesReducer
-//     recievablesAndPayablesReducer,
-//     newContactsReducer,
+    // // recievables and payablesReducer
+    // recievablesAndPayablesReducer,
+    // newContactsReducer,
 
-//     // good-turnovers
-//     goodsTurnoversReducer,
-//     soldItemsReducer,
-//     purchasedItemsReducer,
-//     vatInvoicesReducer,
+    // // good-turnovers
+    // goodsTurnoversReducer,
+    // soldItemsReducer,
+    // purchasedItemsReducer,
+    // vatInvoicesReducer,
 
-//     // reports
-//     salesReport: salesReportReducer,
-//     balanceSheet: balanceSheetReducer,
-//     debtsTurnovers: debtsTurnoversReducer,
-// });
+    // // reports
+    // salesReport: salesReportReducer,
+    // balanceSheet: balanceSheetReducer,
+    // debtsTurnovers: debtsTurnoversReducer,
+});
 
-// const rootReducer = (state, action) => {
-//     if (action.type === 'LOGOUT') {
-//         return undefined;
-//     }
-//     return appReducer(state, action);
-// };
+const rootReducer = (state, action) => {
+    if (action.type === 'LOGOUT') {
+        return undefined;
+    }
+    return appReducer(state, action);
+};
 
-// export default function configureAppStore() {
-//     const store = configureStore({
-//         reducer: rootReducer,
-//         middleware: [...getDefaultMiddleware(), apiMiddleware],
-//     });
-//     return store;
-// }
+export default function configureAppStore() {
+    const store = configureStore({
+        reducer: rootReducer,
+        middleware: [...getDefaultMiddleware(), apiMiddleware],
+    });
+    return store;
+}

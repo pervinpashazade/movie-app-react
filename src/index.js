@@ -9,15 +9,15 @@ import { httpService } from './store/apiConfig';
 
 import reportWebVitals from './reportWebVitals';
 
-// const store = configureAppStore();
+const store = configureAppStore();
 
-// httpService(store);
+httpService(store);
 
 ReactDOM.render(
   // <React.StrictMode>
-  // <Provider store={store}>
-    <App />,
-  // </Provider>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   // </React.StrictMode>,
   document.getElementById('root')
 );
