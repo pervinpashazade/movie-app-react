@@ -1,11 +1,9 @@
-
 import axios from 'axios';
-// import { API } from 'store/constants';
+import { API } from '../constants';
 import { toast } from 'react-toastify';
 
 //copied!!!
 import { showLoader, hideLoader } from '../../utils/loadingIconControl';
-// import { apiStart, apiEnd, apiError, accessDenied } from 'store/actions/api';
 import { apiStart, apiEnd, apiError, accessDenied } from '../actions/api';
 import { messages, apiErrorMessageResolver } from '../../utils';
 import errorMessages from '../../utils/errors';
@@ -15,8 +13,6 @@ import errorMessages from '../../utils/errors';
 //// export const { token, cancel } = CancelToken.source();
 
 const apiMiddleware = ({ dispatch, getState }) => next => action => {
-
-    const API = 'API';
 
     if (action && action.type) {
         if (action?.type !== API) {
@@ -58,14 +54,17 @@ const apiMiddleware = ({ dispatch, getState }) => next => action => {
                 [dataOrParams]: data,
             })
             .then(response => {
+                // console.log("RESPONSE : ", response.data)
                 dispatch(
                     onSuccess({
-                        ...response?.data,
-                        data: response?.data?.data,
+                        ...response?.data, //?
+                        // data: response?.data?.data,
+                        data: response?.data,
                         attribute,
                     })
                 );
 
+                //not working!
                 if (showToast) {
                     toast.success(messages.successText, {
                         className: 'success-toast',

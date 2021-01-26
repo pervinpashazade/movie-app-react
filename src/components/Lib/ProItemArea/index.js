@@ -5,9 +5,9 @@ function ProItemArea(props) {
 
     const { data } = props;
 
-    useEffect(() => {
-        console.log("datalar", data)
-    }, [data])
+    // useEffect(() => {
+    //     console.log("datalar", data)
+    // }, [data])
 
 
     //

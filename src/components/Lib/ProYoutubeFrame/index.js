@@ -14,9 +14,9 @@ const ProYoutubeFrame = (props) => {
     const [isMobile, ] = useState(width > 768 ? false : true)
     const [ytPlayer, setYtPlayer] = useState(undefined)
 
-    useEffect(() => {
-        console.log("isPlay : ", isPlay)
-    }, [isPlay])
+    // useEffect(() => {
+    //     console.log("isPlay : ", isPlay)
+    // }, [isPlay])
 
     //don't autoplay on mobile screen & set isMobile
     //problem is here!!!
@@ -38,7 +38,8 @@ const ProYoutubeFrame = (props) => {
     //create new YT.Player
     useEffect(() => {
         const loadVideo = () => {
-            const player = new window.YT.Player(`youtube-player-${data.id}`, {
+            //const player = 
+            new window.YT.Player(`youtube-player-${data.id}`, {
                 videoId: data.id,
                 events: {
                     onReady: onPlayerReady,
@@ -59,7 +60,7 @@ const ProYoutubeFrame = (props) => {
                     // 'end': 60,
                 },
             });
-            console.log('youtube player', player)
+            // console.log('youtube player', player)
         };
 
         if (!window.YT) { // If not, load the script asynchronously
