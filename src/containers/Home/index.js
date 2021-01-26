@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 // actions
 import { fetchGenres } from '../../store/actions/genre';
 
 //main components
-import HomeVideoBg from './HomeVideoBg'
-import HomeSliderBg from './HomeSliderBg'
-import ProCatalog from '../../components/Lib/ProCatalog'
-
+import HomeVideoBg from './HomeVideoBg';
+import HomeSliderBg from './HomeSliderBg';
+import ProCatalog from '../../components/Lib/ProCatalog';
 import ProSection from '../../components/Lib/ProSection';
+import ProGenres from '../../components/Lib/ProGenres';
 
-import ProContent from '../../components/Lib/ProContent';
-import StoryCircle from '../../components/Lib/ProStory/StoryCircle';
-import StoryCircleSlider from '../../components/Lib/ProStory/StoryCircleSlider';
+
 import ProItemArea from '../../components/Lib/ProItemArea';
 import ProAbout from '../../components/Lib/ProAbout';
 // import ProHowItWorks from '../../components/Lib/ProHowItWorks';
@@ -31,30 +29,13 @@ import platformsSectionBgImage from '../../assets/images/section/section.jpg'
 
 function Home(props) {
 
-    const { fetchGenres, genres } = props;
-
-    useEffect(() => {
-        fetchGenres()
-    }, [fetchGenres])
-
-    useEffect(() => {
-        console.log("genres api home index : ", genres)
-    }, [genres])
+    // const { fetchGenres, genres } = props;
 
     return (
         <>
             <section className="home">
                 <HomeVideoBg />
-                <ProContent>
-                    <StoryCircleSlider
-                        breakpoint="story"
-                    >
-                        {genres.map((item, key) => (
-                            <StoryCircle data={item} showTitle={true} key={key} />
-                        ))}
-
-                    </StoryCircleSlider>
-                </ProContent>
+                <ProGenres />
                 <HomeSliderBg />
             </section>
             <section className="content">
@@ -82,9 +63,7 @@ function Home(props) {
 }
 
 const mapStateToProps = state => ({
-    genres: state.genres.genres
-    // expenseCatalogs: state.expenseItems.expenseCatalogs,
-    // expenseCatalogsIsLoading: state.loadings.expenseCatalogs
+
 });
 
 export default connect(
