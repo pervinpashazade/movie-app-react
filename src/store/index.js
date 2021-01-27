@@ -7,9 +7,11 @@ import apiMiddleware from './middleware/api';
 
 // reducers
 import { genres } from './reducers/genre';
+import { homeBgVideo } from './reducers/homeBgVideo';
 
 const appReducer = combineReducers({
     genres,
+    homeBgVideo,
 });
 
 const rootReducer = (state, action) => {

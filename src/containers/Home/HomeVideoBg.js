@@ -1,21 +1,80 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux';
 import ProYoutubeFrame from '../../components/Lib/ProYoutubeFrame';
 
-function HomeVideoBg() {
+//actions
+import { fetchHomeBgVideo } from '../../store/actions/homeBgVideo';
 
-    let text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley."
+const HomeVideoBg = (props) => {
+
+    const { fetchHomeBgVideo, homeBgVideo } = props;
+
+    const [showVideo, setShowVideo] = useState(false)
+
+    useEffect(() => {
+        fetchHomeBgVideo();
+    }, [fetchHomeBgVideo])
+
+    useEffect(() => {
+        if (homeBgVideo.video_id) {
+            // console.log("api data : ", homeBgVideo)
+            setShowVideo(true)
+        }
+    }, [homeBgVideo])
+
+    // useEffect(() => {
+    //     console.log("video show : ", showVideo)
+    // }, [showVideo])
+
+
+    // useEffect(() => {
+    //     console.log("data api: ", homeBgVideo);
+    //     console.log("show video: ", showVideo);
+    //     console.log("video id: ", homeBgVideo.video_id);
+    //     console.log("showVideo: ", showVideo);
+    // }, [homeBgVideo])
 
     return (
         <>
-            <ProYoutubeFrame
-                data={{
-                    id: "p_PJbmrX4uk",
-                    title: "EXPLORE & WATCH & ENJOY!",
-                    description: text
-                }}
-            />
+            {
+                !showVideo ?
+                    <ProYoutubeFrame
+                        // data={{
+                        //     id: "p_PJbmrX4uk",
+                        //     showTitle: true,
+                        //     title: "EXPLORE & WATCH & ENJOY!",
+                        //     description: text
+                        // }}
+                        isLoading={showVideo}
+                        data={{
+                            // id: showVideo ? homeBgVideo.video_id : "p_PJbmrX4uk",
+                            id: homeBgVideo.video_id,
+                            showTitle: true,
+                            description: homeBgVideo.welcome_text,
+                            title: "EXPLORE & WATCH & ENJOY!"
+                        }}
+                    />
+                    :
+                    <ProYoutubeFrame
+                        initializeVideo={showVideo}
+                        data={{
+                            // id: showVideo ? homeBgVideo.video_id : "p_PJbmrX4uk",
+                            id: homeBgVideo.video_id,
+                            showTitle: true,
+                            description: homeBgVideo.welcome_text,
+                            title: "EXPLORE & WATCH & ENJOY!"
+                        }}
+                    />
+            }
+
         </>
     )
 }
 
-export default HomeVideoBg;
+const mapStateToProps = state => ({
+    homeBgVideo: state.homeBgVideo.homeBgVideoData
+});
+
+export default connect(
+    mapStateToProps, { fetchHomeBgVideo }
+)(HomeVideoBg);

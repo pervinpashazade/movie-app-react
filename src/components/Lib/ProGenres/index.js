@@ -18,10 +18,6 @@ const ProGenres = (props) => {
         fetchGenres()
     }, [fetchGenres])
 
-    useEffect(() => {
-        console.log("genres api home index : ", genres)
-    }, [genres])
-
     return (
         <>
             <ProContent>

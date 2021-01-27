@@ -3,40 +3,30 @@ import useWindowsSize from '../../../hooks/useWindowsSize'
 import './style.css'
 
 const ProYoutubeFrame = (props) => {
+    const { initializeVideo, data } = props;
 
-    const { data } = props;
     const [width,] = useWindowsSize()
 
     //youtube-buttons
     const [isPlay, setIsPlay] = useState(width > 768 ? true : false)
     const [isMute, setIsMute] = useState(true)
 
-    const [isMobile, ] = useState(width > 768 ? false : true)
+    const [isMobile,] = useState(width > 768 ? false : true)
     const [ytPlayer, setYtPlayer] = useState(undefined)
 
-    // useEffect(() => {
-    //     console.log("isPlay : ", isPlay)
-    // }, [isPlay])
+    const initializeYoutubeVideo = () => {
+        const onPlayerReady = event => {
+            setYtPlayer({ response: event.target }) //set yt player from youtube api
+            // document.getElementsByClassName('ytp-pause-overlay').style.visibility='hidden';
 
-    //don't autoplay on mobile screen & set isMobile
-    //problem is here!!!
-    // useEffect(() => {
-    //     setIsMobile(width > 768 ? false : true)
-    // }, [width])
+            //
+            event.target.playVideo();
+            if (isMobile) {
+                event.target.pauseVideo();
+            }
+        };
 
-    const onPlayerReady = event => {
-        setYtPlayer({ response: event.target }) //set yt player from youtube api
-        // document.getElementsByClassName('ytp-pause-overlay').style.visibility='hidden';
-
-        //
-        event.target.playVideo();
-        if (isMobile) {
-            event.target.pauseVideo();
-        }
-    };
-
-    //create new YT.Player
-    useEffect(() => {
+        //create new YT.Player
         const loadVideo = () => {
             //const player = 
             new window.YT.Player(`youtube-player-${data.id}`, {
@@ -61,7 +51,7 @@ const ProYoutubeFrame = (props) => {
                 },
             });
             // console.log('youtube player', player)
-        };
+        }
 
         if (!window.YT) { // If not, load the script asynchronously
             const tag = document.createElement('script');
@@ -75,20 +65,39 @@ const ProYoutubeFrame = (props) => {
         } else { // If script is already there, load the video directly
             loadVideo();
         }
-    }, [data.id])
+    }
 
-    const imgUrl = "https://gadgetfreeks.com/wp-content/uploads/2020/04/Money-Heist-Season-4.jpg"
+    useEffect(() => {
+        if(initializeVideo){
+            initializeYoutubeVideo();
+        }
+    }, [initializeVideo])
+
+    useEffect(() => {
+        console.log("video show : ", initializeVideo)
+    }, [initializeVideo])
+
+
+    // const staticImgUrl = "https://gadgetfreeks.com/wp-content/uploads/2020/04/Money-Heist-Season-4.jpg"
+    const staticImgUrl = "https://drscdn.500px.org/photo/43239144/q%3D80_m%3D1500/v2?sig=7f6d3eb11051ee674ae04597c38be369388330e6070540f872817c1be65240c7"
 
     return (
         <div className="youtube-container">
             <div className={width > 640 ? "container" : ""}>
-                {/* <div className="container"> */}
                 <div className="youtube-overlay">
                     <div className="poster"></div>
+
                     <div className="youtube-content">
-                        <p className="title">{isMobile ? "Explore & Watch & enjoy!" : data.title}</p>
-                        <p className="description">{data.description}</p>
+                        {data.showTitle ?
+                            <>
+                                <p className="title">{data.title}</p>
+                                <p className="description">{data.description}</p>
+                            </>
+                            :
+                            <p className="title">Explore & Watch & enjoy!</p>
+                        }
                     </div>
+
                     <ul className="youtube-buttons">
                         <li>
                             <button
@@ -138,7 +147,8 @@ const ProYoutubeFrame = (props) => {
                         </li>
                     </ul>
                 </div>
-                <div className="youtube-frame" style={{ backgroundImage: `url(${imgUrl})` }}>
+
+                <div className="youtube-frame" style={{ backgroundImage: `url(${staticImgUrl})` }}>
                     {isMobile ?
                         <div style={{ opacity: isPlay ? 1 : 0 }}>
                             <div id={`youtube-player-${data.id}`} />
