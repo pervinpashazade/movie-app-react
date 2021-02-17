@@ -10,6 +10,7 @@ import HomeSliderBg from './HomeSliderBg';
 import ProCatalog from '../../components/Lib/ProCatalog';
 import ProSection from '../../components/Lib/ProSection';
 import ProGenres from '../../components/Lib/ProGenres';
+import Platforms from '../../components/Lib/Platforms';
 
 
 import ProItemArea from '../../components/Lib/ProItemArea';
@@ -50,7 +51,8 @@ function Home(props) {
                         backgroundSize: 'cover',
                         backgroundReapeat: 'norepeat'
                     }}>
-                <ProItemArea data={platformsData.data} />
+                {/* <ProItemArea data={platformsData.data} /> */}
+                <Platforms data={platformsData} />
             </ProSection>
             <ProSection proClasses={"section"}>
                 <ProAbout />

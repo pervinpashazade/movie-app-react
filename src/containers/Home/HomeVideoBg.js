@@ -21,12 +21,7 @@ const HomeVideoBg = (props) => {
             setShowVideo(true)
         }
     }, [homeBgVideo])
-
-    // useEffect(() => {
-    //     console.log("video show : ", showVideo)
-    // }, [showVideo])
-
-
+    
     // useEffect(() => {
     //     console.log("data api: ", homeBgVideo);
     //     console.log("show video: ", showVideo);

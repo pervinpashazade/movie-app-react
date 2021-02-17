@@ -17,12 +17,12 @@ function ProItemsGrid(props) {
                                 <Card data={item} showOnlyImage={showOnlyImage} />
                             </div>
                         )}
-                        {
+                        {/* {
                             showMore &&
                             <div className="col-6 col-sm-4 col-lg-3 col-xl-2 d-flex align-items-center">
                                 <a href="0#" className="section__btn">Show more</a>
                             </div>
-                        }
+                        } */}
                     </div>
                 </div>
             </div>

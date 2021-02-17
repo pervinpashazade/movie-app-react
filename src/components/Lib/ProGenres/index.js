@@ -19,9 +19,9 @@ const ProGenres = (props) => {
         fetchGenres()
     }, [fetchGenres])
 
-    console.log("loading: ", isLoading);
-    console.log("api genres: ", genres);
-    console.log("loading: ", isLoading);
+    // console.log("loading: ", isLoading);
+    // console.log("api genres: ", genres);
+    // console.log("loading: ", isLoading);
 
     return (
         <>
