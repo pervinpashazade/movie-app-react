@@ -73,9 +73,9 @@ const ProYoutubeFrame = (props) => {
         }
     }, [initializeVideo])
 
-    useEffect(() => {
-        console.log("video show : ", initializeVideo)
-    }, [initializeVideo])
+    // useEffect(() => {
+    //     console.log("video show : ", initializeVideo)
+    // }, [initializeVideo])
 
 
     // const staticImgUrl = "https://gadgetfreeks.com/wp-content/uploads/2020/04/Money-Heist-Season-4.jpg"

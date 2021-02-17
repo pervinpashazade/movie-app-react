@@ -12,6 +12,7 @@ SwiperCore.use([Scrollbar ]);
 export default function StoryCircleSlider({
     children,
     loop,
+    showScroolBar
 }) {
 
     return (
@@ -20,7 +21,7 @@ export default function StoryCircleSlider({
             wrapperTag="ul"
             loop={loop && true}
             slidesPerView={loop && "auto"}
-            scrollbar
+            scrollbar={showScroolBar ? true : false}
             breakpoints={{
                 320: {
                     slidesPerView: 4

@@ -4,7 +4,7 @@ import { apiStart, apiEnd } from '../../actions/api';
 import { setGenres } from '../../actions/genre/index';
 
 const initialState = {
-    // isLoading: false,
+    isLoading: false,
     // actionLoading: false,
     // genre: undefined,
     // selectedGenreId: undefined,

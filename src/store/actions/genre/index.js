@@ -17,7 +17,7 @@ export function fetchGenres() {
     return apiAction({
         // url: `/api/all-genres/`,
         // url: `http://127.0.0.1:8000/api/all-genres/`,
-        url: `${API_URL}/all-genres`,
+        url: `${API_URL}/genres`,
         onSuccess: setGenres,
         // onSuccess: {},
         label: 'Genres',
