@@ -2,6 +2,9 @@ import React from 'react'
 import './style.css'
 import imgLogo from '../../../assets/images/logo.svg'
 
+//components
+import ProCheckbox from '../ProCheckbox'
+
 function ProLogin() {
     return (
         <form action="#" className="sign__form">
@@ -17,10 +20,10 @@ function ProLogin() {
                 <input type="password" className="sign__input" placeholder="Password" />
             </div>
 
-            {/* <div className="sign__group sign__group--checkbox">
-                <input id="remember" name="remember" type="checkbox" checked="checked" />
+            <div className="sign__group sign__group--checkbox">
+                <ProCheckbox id={'remember'} name={'remember'} isChecked={true} />
                 <label for="remember">Remember Me</label>
-            </div> */}
+            </div>
 
             <button className="sign__btn" type="button">Sign in</button>
 
