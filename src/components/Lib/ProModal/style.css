@@ -9,18 +9,19 @@
     height: 100%;
     overflow: hidden;
     overflow: -moz-hidden-unscrollable;
+    cursor: auto;
     /* // */
     /* display: flex;
     align-items: center;
     justify-content: center; */
 }
 
-.pro-modal.active body {
+/* .pro-modal.active body {
     margin: 0 !important;
     height: 100% !important;
     overflow: hidden !important;
     overflow: -moz-hidden-unscrollable !important;
-}
+} */
 
 .pro-modal .modal-backdrop {
     position: fixed;
@@ -46,4 +47,5 @@
     background-color: red;
     /* display: flex;
     justify-content: center; */
+    cursor: auto;
 }

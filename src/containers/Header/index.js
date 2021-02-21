@@ -105,10 +105,12 @@ const Header = () => {
 
                                     {/* header auth */}
                                     <div className="header__auth">
+                                        {/* search */}
                                         <button className="header__search-btn" type="button"
                                             onClick={toggleSearchForm}>
                                             <i className="icon ion-ios-search"></i>
                                         </button>
+                                        {/* end search */}
 
                                         {/* dropdown */}
                                         <div className="dropdown header__lang">

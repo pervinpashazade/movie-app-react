@@ -10,9 +10,11 @@ function ProItemArea(props) {
             <div className="container">
                 <div className="row">
 
-                    <div className="col-12 d-flex justify-content-between">
-                        <div><h2 className="section__title">{title}</h2></div>
-                        <div><a href="0#" className="section__btn">Show more</a></div>
+                    <div className="col-12">
+                        <div className="pro-item-area__header">
+                            <div><h2 className="section__title">{title}</h2></div>
+                            <div><a href="0#" className="section__btn">Show more</a></div>
+                        </div>
                     </div>
 
                     <ProItemsGrid data={data} showOnlyImage={true} showMore={false} />

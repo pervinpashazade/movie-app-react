@@ -3,37 +3,23 @@ import './style.css'
 import ProModal from '../ProModal';
 import ProLogin from '../ProLogin'
 
-function ProLoginBtn(props) {
+function ProLoginBtn() {
 
-    const { test } = props;
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
 
-    const modalRef = React.useRef();
-
-    const openModal = () => {
-        modalRef.current.openModal()
-    };
-
-    // const openModal = () => {
-    //     setShowModal(true)
-    // };
-
-    // const closeModal = () => {
-    //     setShowModal(false)
-    // };
+    React.useEffect(() => {
+        console.log("showModal", showModal);
+    }, [showModal])
 
     return (
         <>
-            <button onClick={openModal} className="btn-sign-in">
+            <button onClick={() => { setShowModal(true) }} className="btn-sign-in">
                 <i className="icon ion-ios-log-in"></i>
                 <span>sign in</span>
-                {/* <ProModal showModal={showModal} setShowModal={closeModal}> */}
-                <ProModal ref={modalRef}>
-                    <ProLogin />
-                </ProModal>
-
             </button>
-
+            <ProModal showModal={showModal} setShowModal={setShowModal}>
+                <ProLogin />
+            </ProModal>
         </>
     )
 }

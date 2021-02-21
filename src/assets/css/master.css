@@ -29,3 +29,14 @@ body {
     opacity: 1;
     pointer-events: auto;
 }
+
+/* // */
+
+.pro-item-area__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pro-item-area__header a.section__btn{
+    margin: 0;
+}
