@@ -8,11 +8,11 @@ import { fetchPlatforms } from '../../../store/actions/platform';
 import ProItemArea from '../ProItemArea'
 
 function Platforms(props) {
-    const { fetchPlatforms, platforms, isLoading, data } = props;
+    const { fetchPlatforms, platforms, isLoading } = props;
 
-    // useEffect(() => {
-    //     fetchPlatforms();
-    // }, [fetchPlatforms])
+    useEffect(() => {
+        fetchPlatforms();
+    }, [fetchPlatforms])
 
     // useEffect(() => {
     //     console.log("platforms data : ", platforms)
@@ -20,7 +20,7 @@ function Platforms(props) {
 
     return (
         <>
-            <ProItemArea title={'Platforms'} data={data.data} />
+            <ProItemArea title={'Platforms'} data={platforms} />
         </>
     )
 }
