@@ -254,6 +254,7 @@
     -webkit-text-fill-color: transparent;
     color: #ff5860;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .sign__text a:hover {

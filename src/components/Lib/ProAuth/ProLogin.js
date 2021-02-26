@@ -1,11 +1,16 @@
 import React from 'react'
+
+//style
 import './style.css'
 import imgLogo from '../../../assets/images/logo.svg'
 
 //components
 import ProCheckbox from '../ProCheckbox'
 
-function ProLogin() {
+function ProLogin(props) {
+
+    const { setModalComponent } = props;
+
     return (
         <form action="#" className="sign__form">
             <a href="0#" className="sign__logo">
@@ -27,9 +32,13 @@ function ProLogin() {
 
             <button className="sign__btn" type="button">Sign in</button>
 
-            <span className="sign__text">Don't have an account? <a href="signup.html">Sign up!</a></span>
+            <span className="sign__text">
+                Don't have an account? <a onClick={() => { setModalComponent("ProRegister") }} >Sign up!</a>
+            </span>
 
-            <span className="sign__text"><a href="forgot.html">Forgot password?</a></span>
+            <span className="sign__text">
+                <a onClick={() => { setModalComponent("ForgotPassword") }} >Forgot password?</a>
+            </span>
         </form>
     )
 }

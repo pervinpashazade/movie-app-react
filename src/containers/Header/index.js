@@ -6,7 +6,7 @@ import '../../assets/vendors/css/ionicons.min.css'; // !!!
 
 //components
 import SearchBarForm from '../../components/Lib/SearchBar/SearchBarForm';
-import ProLoginBtn from '../../components/Lib/ProLogin/ProLoginBtn';
+import ProLoginBtn from '../../components/Lib/ProAuth/ProLoginBtn';
 
 
 const Header = () => {

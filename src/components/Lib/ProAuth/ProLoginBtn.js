@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css'
 import ProModal from '../ProModal';
-import ProLogin from '../ProLogin'
+import AuthModals from '../ProModal/authModals'
 
 function ProLoginBtn() {
 
@@ -18,7 +18,7 @@ function ProLoginBtn() {
                 <span>sign in</span>
             </button>
             <ProModal showModal={showModal} setShowModal={setShowModal}>
-                <ProLogin />
+                <AuthModals content={'ProLogin'} />
             </ProModal>
         </>
     )
