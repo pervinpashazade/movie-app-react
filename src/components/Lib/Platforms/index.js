@@ -20,7 +20,7 @@ function Platforms(props) {
 
     return (
         <>
-            <ProItemArea title={'Platforms'} data={platforms} />
+            <ProItemArea title={'Platforms'} data={platforms} showMore={false} />
         </>
     )
 }

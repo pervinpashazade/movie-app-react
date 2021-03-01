@@ -3,7 +3,7 @@ import ProItemsGrid from '../ProItemsGrid';
 
 function ProItemArea(props) {
 
-    const { title, data } = props;
+    const { title, data, showMore } = props;
 
     return (
         <>
@@ -13,7 +13,10 @@ function ProItemArea(props) {
                     <div className="col-12">
                         <div className="pro-item-area__header">
                             <div><h2 className="section__title">{title}</h2></div>
-                            <div><a href="0#" className="section__btn">Show more</a></div>
+                            {
+                                showMore &&
+                                <div><a href="0#" className="section__btn">Show more</a></div>
+                            }
                         </div>
                     </div>
 
