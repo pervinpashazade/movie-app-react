@@ -114,7 +114,8 @@
     position: relative;
     color: #fff;
     font-size: 15px;
-    width: 250px;
+    /* width: 250px; */
+    width: 100% !important;
     color: #fff;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -126,6 +127,7 @@
 .sign__group {
     position: relative;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .sign__group--checkbox {
@@ -264,6 +266,18 @@
 @media (min-width: 360px) {
     .sign__input {
         width: 280px;
+    }
+}
+
+@media (min-width: 420px) {
+    .sign__form {
+        padding: 40px 40px;
+    }
+}
+
+@media (min-width: 640px) {
+    .sign__form {
+        padding: 40px 50px;
     }
 }
 

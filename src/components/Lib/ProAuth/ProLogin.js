@@ -17,17 +17,28 @@ function ProLogin(props) {
                 <img src={imgLogo} alt="FilmGo.az logo" />
             </a>
 
-            <div className="sign__group">
-                <input type="text" className="sign__input" placeholder="Email or username" />
-            </div>
 
-            <div className="sign__group">
-                <input type="password" className="sign__input" placeholder="Password" />
-            </div>
+            <div className="container p-0">
+                <div className="row">
+                    <div className="col-12 col-md-6">
+                        <div className="sign__group">
+                            <input type="text" className="sign__input" placeholder="Email or username" />
+                        </div>
+                    </div>
 
-            <div className="sign__group sign__group--checkbox">
-                <ProCheckbox id={'remember'} name={'remember'} isChecked={true} />
-                <label for="remember">Remember Me</label>
+                    <div className="col-12 col-md-6">
+                        <div className="sign__group">
+                            <input type="password" className="sign__input" placeholder="Password" />
+                        </div>
+                    </div>
+
+                    <div className="col-12">
+                        <div className="sign__group sign__group--checkbox">
+                            <ProCheckbox id={'remember'} name={'remember'} isChecked={true} />
+                            <label for="remember">Remember Me</label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <button className="sign__btn" type="button">Sign in</button>

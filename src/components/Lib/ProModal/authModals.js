@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 //components
+import { ModalBody } from 'reactstrap';
 import ProLogin from '../ProAuth/ProLogin'
 import ProRegister from '../ProAuth/ProRegister'
 import ForgotPassword from '../ProAuth/ForgotPassword'
@@ -23,7 +24,9 @@ function AuthModals(props) {
 
     return (
         <>
-            {renderContent()}
+            <ModalBody>
+                {renderContent()}
+            </ModalBody>
         </>
     )
 }
