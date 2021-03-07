@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import './style.css'
+//components
 import ProModal from '../ProModal';
 import AuthModals from '../ProModal/authModals'
+//style
+import './style.css'
 
 function ProLoginBtn() {
-
     const [showModal, setShowModal] = useState(false);
-
-    React.useEffect(() => {
-        console.log("showModal", showModal);
-    }, [showModal])
 
     return (
         <>

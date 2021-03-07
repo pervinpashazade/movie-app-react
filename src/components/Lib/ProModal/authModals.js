@@ -6,9 +6,7 @@ import ProRegister from '../ProAuth/ProRegister'
 import ForgotPassword from '../ProAuth/ForgotPassword'
 
 function AuthModals(props) {
-
     const { content } = props;
-
     const [component, setComponent] = useState(content)
 
     function renderContent() {

@@ -23,7 +23,7 @@ a:hover, a:active, a:focus {
     text-decoration: none;
 }
 
-input, textarea, select {
+/* input, textarea, select {
     padding: 0;
     margin: 0;
     -webkit-border-radius: 0;
@@ -37,7 +37,7 @@ input, textarea, select {
 
 input:focus, textarea:focus, select:focus {
     outline: none;
-}
+} */
 
 ul {
     margin: 0;
@@ -57,10 +57,10 @@ ul {
     text-shadow: none;
 }
 
-::-webkit-input-placeholder {
+/* ::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.5);
     opacity: 1;
-}
+} */
 
 ::-moz-placeholder {
     color: rgba(255, 255, 255, 0.5);
@@ -72,10 +72,10 @@ ul {
     opacity: 1;
 }
 
-:-ms-input-placeholder {
+/* :-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.5);
     opacity: 1;
-}
+} */
 
 .tab-content>.tab-pane {
     display: none;

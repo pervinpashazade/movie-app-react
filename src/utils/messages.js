@@ -24,6 +24,6 @@ export const messages = {
   // passwordRepeatError: 'Şifrənin təkrarı düzgün deyil.', //az
   passwordRepeatError: 'Password confirmation is incorrect.',
   // maxtextLimitMessage: limitSize => `${limitSize} simvoldan çox olmamalıdır.`, //az
-  maxtextLimitMessage: limitSize => `should not exceed ${limitSize} characters`,
-  mintextLimitMessage: limitSize => `should not be less than ${limitSize} character.`,
+  maxtextLimitMessage: limitSize => `Should not exceed ${limitSize} characters`,
+  mintextLimitMessage: limitSize => `Should not be less than ${limitSize} character.`,
 };

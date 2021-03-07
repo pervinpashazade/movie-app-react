@@ -1,0 +1,37 @@
+/* common */
+
+input, textarea, select {
+    padding: 0;
+    margin: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+input.validate-error {
+    border-left: 1px solid #ff5864;
+}
+
+input.validate-success {
+    border-left: 1px solid green;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+/* common // */
