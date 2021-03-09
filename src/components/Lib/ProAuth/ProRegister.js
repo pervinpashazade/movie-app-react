@@ -17,7 +17,8 @@ function ProRegister(props) {
         last_name: "",
         email: "",
         password: "",
-        re_password: ""
+        re_password: "",
+        privacy_policy: false,
     }
 
     const validateForm = (values) => {
@@ -91,6 +92,11 @@ function ProRegister(props) {
             errors.re_password = 'Password Confirm must be same';
         }
 
+        //accept privacy policy
+        if (!values.privacy_policy) {
+            errors.privacy_policy = 'You must Accept Privacy Policy for sign up';
+        }
+
         return errors;
     }
 
@@ -132,7 +138,7 @@ function ProRegister(props) {
                             <ProInput
                                 type={"text"}
                                 name={"last_name"}
-                                className={`sign__input ${errors.last_name && 'validate-error'}`}
+                                className={`sign__input ${errors.last_name ? 'validate-error' : ''}`}
                                 placeholder={"Surname"}
                                 value={values.last_name}
                                 onChange={onChange}
@@ -151,7 +157,7 @@ function ProRegister(props) {
                             <ProInput
                                 // type={"text"}
                                 name={"email"}
-                                className={`sign__input ${errors.email && 'validate-error'}`}
+                                className={`sign__input ${errors.email ? 'validate-error' : ''}`}
                                 placeholder={"Email"}
                                 value={values.email}
                                 onChange={onChange}
@@ -167,10 +173,11 @@ function ProRegister(props) {
                             <ProInput
                                 type={"text"}
                                 name={"username"}
-                                className={`sign__input ${errors.username && 'validate-error'}`}
+                                className={`sign__input ${errors.username ? 'validate-error' : ''}`}
                                 placeholder={"Username"}
                                 value={values.email}
                                 onChange={onChange}
+                                noWhiteSpace
                             />
                             {errors.username &&
                                 <span className="sign__error-message">{errors.username}</span>
@@ -185,10 +192,11 @@ function ProRegister(props) {
                             <ProInput
                                 type={"password"}
                                 name={"password"}
-                                className={`sign__input ${errors.password && 'validate-error'}`}
+                                className={`sign__input ${errors.password ? 'validate-error' : ''}`}
                                 placeholder={"Password"}
                                 value={values.password}
                                 onChange={onChange}
+                                showInputIcons
                             />
                             {errors.password &&
                                 <span className="sign__error-message">{errors.password}</span>
@@ -201,10 +209,11 @@ function ProRegister(props) {
                             <ProInput
                                 type={"password"}
                                 name={"re_password"}
-                                className={`sign__input ${errors.re_password && 'validate-error'}`}
+                                className={`sign__input ${errors.re_password ? 'validate-error' : ''}`}
                                 placeholder={"Confirm Password"}
                                 value={values.re_password}
                                 onChange={onChange}
+                                showInputIcons
                             />
                             {errors.re_password &&
                                 <span className="sign__error-message">{errors.re_password}</span>
@@ -215,8 +224,22 @@ function ProRegister(props) {
             </div>
 
             <div className="sign__group sign__group--checkbox">
-                <ProCheckbox id={'remember'} name={'remember'} isChecked={true} />
-                <label for="remember">I agree to the <a href="privacy.html">Privacy Policy</a></label>
+                <ProCheckbox
+                    id={'remember'}
+                    name={'privacy_policy'}
+                    isChecked={values.privacy_policy}
+                    // onChange={handleCheckbox}
+                    onChange={onChange}
+                />
+                <label for="remember"
+                    className={`checkbox-label ${errors.privacy_policy ? 'validate-error' : ''}`}
+                >
+                    I agree to the <a href="privacy.html"
+                    >Privacy Policy</a>
+                </label>
+                {errors.privacy_policy &&
+                    <span className="sign__error-message">{errors.privacy_policy}</span>
+                }
             </div>
 
             <button className="sign__btn" type="submit">Sign up</button>

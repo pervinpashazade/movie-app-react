@@ -208,6 +208,18 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
+.sign__group .input-icons {
+    position: absolute;
+    top: 10px;
+    right: 5%;
+    font-size: 20px;
+}
+
+.sign__group .input-icons i {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .sign__btn {
     display: flex;
     justify-content: center;

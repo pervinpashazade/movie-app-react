@@ -16,6 +16,10 @@ input.validate-error {
     border-left: 1px solid #ff5864;
 }
 
+label.checkbox-label.validate-error::before {
+    border: 1px solid #ff5864;
+}
+
 input.validate-success {
     border-left: 1px solid green;
 }
